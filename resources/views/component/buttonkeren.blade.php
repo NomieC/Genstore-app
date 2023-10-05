@@ -20,7 +20,7 @@
 	<div class="absolute-center">
 		<div class="showreels-div">
 			<video class="showreels-video" loop autoplay muted>
-				<source src='https://github.com/ahampriyanshu/gfg/raw/main/media/showreel.mp4' type="video/mp4" />
+				<source src='https://github.com/NomieC/Genstore-app/blob/main/public/src/showreel.mp4' type="video/mp4" />
 				<p>Please Update Your Browser</p>
 			</video>
 			<img
