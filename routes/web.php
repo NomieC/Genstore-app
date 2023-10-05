@@ -23,3 +23,8 @@ Route::get('/about', function () {
         "title" => "About us"
     ]);
 });
+Route::get('/menu', function () {
+    return view('menu', [
+        "title" => "Menu"
+    ]);
+});
