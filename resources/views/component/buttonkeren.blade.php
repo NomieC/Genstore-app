@@ -1,90 +1,182 @@
-<div class='flex items-center justify-center min-h-screen from-gray-100 via-gray-300 to-gay-500 bg-gradient-to-br'>
-   <div class="relative w-full h-screen">
-	<div class="absolute-center">
-		<svg class="circle-svg" viewBox="0 0 500 500">
-			<defs>
-				<path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-					id="textcircle_top">
-					<animateTransform attributeName="transform" begin="0s" dur="20s" type="rotate" from="0 250 250"
-						to="360 250 250" repeatCount="indefinite" />
-				</path>
-			</defs>
-			<text class="circle-text" dy="70" textLength="1220">
-				<textPath xlink:href="#textcircle_top">
-					View Our Showreels View Our Showreels
-				</textPath>
-			</text>
-		</svg>
+<button class="btn" data-speed="0.3" type="button" href="../App/index.php">
+	<strong class="strong">Get Started</strong>
+	<div class="containerstars">
+		<div class="stars"></div>
+	</div>
 
+	<div class="glow">
+		<div class="circle"></div>
+		<div class="circle"></div>
 	</div>
-	<div class="absolute-center">
-		<div class="showreels-div">
-			<video class="showreels-video" loop autoplay muted>
-				<source src='https://github.com/NomieC/Genstore-app/blob/main/public/src/showreel.mp4' type="video/mp4" />
-				<p>Please Update Your Browser</p>
-			</video>
-			<img
-              alt="play"
-              class="showreels-btn"
-              src='https://github.com/ahampriyanshu/gfg/raw/main/media/play.png'
-            />
-          </div>
-		</div>
-	</div>
-</div>
+</button>
+
 <style>
-    		.showreels-btn {
-			width: 25%;
-			height: 25%;
-			display: block;
-			margin: 0;
-			position: absolute;
-			top: 50%;
-			left: 55%;
-			-ms-transform: translate(-55%, -50%);
-			transform: translate(-55%, -50%);
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 16rem;
+		height: 4rem;
+		background-size: 300% 300%;
+		backdrop-filter: blur(1rem);
+		border-radius: 5rem;
+		transition: 0.5s;
+		animation: gradient_301 5s ease infinite;
+		border: double 4px transparent;
+		background-image: linear-gradient(#3E206D, #3E206D), linear-gradient(137.48deg, #F7F5E8 10%, #B68861 45%, #EFEBE2 67%, #B68861 87%);
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		margin-top: 45vh;
+	}
+
+	.containerstars {
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		transition: 0.5s;
+		backdrop-filter: blur(1rem);
+		border-radius: 5rem;
+	}
+
+	.strong {
+		z-index: 2;
+		font-family: 'Avalors Personal Use';
+		font-size: 1.5rem;
+		letter-spacing: 5px;
+		color: #FFFFFF;
+		text-shadow: 0 0 4px white;
+	}
+
+	.glow {
+		position: absolute;
+		display: flex;
+		width: 12rem;
+	}
+
+	.circle {
+		width: 100%;
+		height: 30px;
+		filter: blur(2rem);
+		animation: pulse_3011 4s infinite;
+		z-index: -1;
+	}
+
+	.circle:nth-of-type(1) {
+		background: rgba(254, 83, 186, 0.636);
+	}
+
+	.circle:nth-of-type(2) {
+		background: rgba(142, 81, 234, 0.704);
+	}
+
+	.btn:hover .containerstars {
+		z-index: 1;
+		background-color: #212121;
+	}
+
+	.btn:hover {
+		transform: scale(1.1)
+	}
+
+	.btn:active {
+		border: double 4px #FE53BB;
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		animation: none;
+	}
+
+	.btn:active .circle {
+		background: #FE53BB;
+	}
+
+	.stars {
+		position: relative;
+		background: transparent;
+		width: 200rem;
+		height: 200rem;
+	}
+
+	.stars::after {
+		content: "";
+		position: absolute;
+		top: -10rem;
+		left: -100rem;
+		width: 100%;
+		height: 100%;
+		animation: animStarRotate 90s linear infinite;
+	}
+
+	.stars::after {
+		background-image: radial-gradient(#ffffff 1px, transparent 1%);
+		background-size: 50px 50px;
+	}
+
+	.stars::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -50%;
+		width: 170%;
+		height: 500%;
+		animation: animStar 60s linear infinite;
+	}
+
+	.stars::before {
+		background-image: radial-gradient(#ffffff 1px, transparent 1%);
+		background-size: 50px 50px;
+		opacity: 0.5;
+	}
+
+	@keyframes animStar {
+		from {
+			transform: translateY(0);
 		}
 
-		.showreels-div:hover .showreels-video {
-			display: block;
+		to {
+			transform: translateY(-135rem);
+		}
+	}
+
+	@keyframes animStarRotate {
+		from {
+			transform: rotate(360deg);
 		}
 
-		.showreels-div:hover .showreels-btn {
-			display: none;
+		to {
+			transform: rotate(0);
+		}
+	}
+
+	@keyframes gradient_301 {
+		0% {
+			background-position: 0% 50%;
 		}
 
-        	.circle-text {
-			font-size: 24px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 10px;
-			fill: #333;
+		50% {
+			background-position: 100% 50%;
 		}
 
-		.showreels-div {
-			height: 150px;
-			width: 150px;
-			border-radius: 100%;
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	@keyframes pulse_3011 {
+		0% {
+			transform: scale(0.75);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
 		}
 
-		.showreels-video {
-			border-radius: 100%;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: none;
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
 		}
 
-        	.circle-svg {
-			height: 350px;
-			width: 350px;
+		100% {
+			transform: scale(0.75);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 		}
-        .absolute-center {
-			margin: 0;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
+	}
 </style>
