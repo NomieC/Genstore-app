@@ -18,10 +18,7 @@
 <body class="h-14 bg-gradient-to-r from-stone-500 to-gray-700">
 
     @include('component.navbar')
-
-    <div>
-        @yield('container')
-    </div>
+    @yield('container')
 </body>
 
 </html>
