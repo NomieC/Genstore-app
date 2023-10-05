@@ -1,4 +1,4 @@
-<button class="btn" data-speed="0.3" type="button" href="../App/index.php">
+<button class="btn" data-speed="0.3" type="button" href="../menu.blade.php">
 	<strong class="strong">Get Started</strong>
 	<div class="containerstars">
 		<div class="stars"></div>
@@ -26,7 +26,6 @@
 		background-image: linear-gradient(#3E206D, #3E206D), linear-gradient(137.48deg, #F7F5E8 10%, #B68861 45%, #EFEBE2 67%, #B68861 87%);
 		background-origin: border-box;
 		background-clip: content-box, border-box;
-		margin-top: 45vh;
 	}
 
 	.containerstars {
