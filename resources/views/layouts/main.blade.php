@@ -15,7 +15,7 @@
     </style>
 </head>
 
-<body class="h-14 bg-gradient-to-r from-stone-500 to-gray-700">
+<body class="h-14">
 
     @include('component.navbar')
 
