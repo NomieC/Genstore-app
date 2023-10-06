@@ -9,7 +9,7 @@
         <!-- Sidebar -->
         <div x-transition:enter="transform transition-transform duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transform transition-transform duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-show="isSidebarOpen" class="fixed inset-y-0 z-10 flex w-80">
             <!-- Curvy shape -->
-            <svg class="absolute inset-0 w-full h-full text-white" style="filter: drop-shadow(10px 0 10px #00000030)" preserveAspectRatio="none" viewBox="0 0 309 800" fill="rgb(107 114 128)" xmlns="http://www.w3.org/2000/svg">
+            <svg class="absolute inset-0 w-full h-full text-white" style="filter: drop-shadow(10px 0 10px #00000030)" preserveAspectRatio="none" viewBox="0 0 309 800" fill="#fdf5e8 " xmlns="http://www.w3.org/2000/svg">
                 <path d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z" />
             </svg>
             <!-- Sidebar content -->
@@ -39,6 +39,9 @@
                     </a>
                     <a href="/about" class="flex items-center space-x-2">
                         <span>About us</span>
+                    </a>
+                    <a href="/photogalery" class="flex items-center space-x-2">
+                        <span>Galery</span>
                     </a>
                 </nav>
                 <div class="flex-shrink-0 p-4">

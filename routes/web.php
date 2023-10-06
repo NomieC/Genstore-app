@@ -33,3 +33,8 @@ Route::get('/menu', function () {
         "title" => "Menu"
     ]);
 });
+Route::get('/photogalery', function () {
+    return view('photogalery', [
+        "title" => "Photo Galery"
+    ]);
+});

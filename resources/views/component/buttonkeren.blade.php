@@ -23,10 +23,11 @@
 		transition: 0.5s;
 		animation: gradient_301 5s ease infinite;
 		border: double 4px transparent;
-		background-image: linear-gradient(#3E206D, #3E206D), linear-gradient(137.48deg, #F7F5E8 10%, #B68861 45%, #EFEBE2 67%, #B68861 87%);
+		background-image: linear-gradient(#927c55, #878882), linear-gradient(137.48deg, #F7F5E8 10%, #B68861 45%, #EFEBE2 67%, #B68861 87%);
 		background-origin: border-box;
 		background-clip: content-box, border-box;
 	}
+	
 
 	.containerstars {
 		position: absolute;
