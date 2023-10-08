@@ -172,7 +172,7 @@
 			</h2>
 		</div>
 
-        <form action="proses.blade.php" method="post" enctype="multipart/form-data" onsubmit="redirectToIndex()">
+        <form action="/createMenu" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input">
                 <input type="text" name="nama" class="input-field" value="<?php echo $nama; ?>" required/>

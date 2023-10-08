@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\YourController;
+use App\Http\Controllers\Menu2Controller;
 use App\Http\Controllers\CustomAuthController;
 
 /*
@@ -15,12 +19,25 @@ use App\Http\Controllers\CustomAuthController;
 */
 
 Route::get('/', function () {
-    return view('register');
+    return view('form');
 });
 
-Route::post('/register', function() {
-    return "Thanks";
-});
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/login', [UserController::class, 'login']);
 
-Route::get('/login',[CustomAuthController::class,'login']);
-Route::get('/registration',[CustomAuthController::class,'registration']);
+// Menu routes
+Route::post('/createMenu', [Menu2Controller::class, 'createMenu']);
+
+
+// Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
+
+
+// Define a named route for the form method
+// Route::get('/form', [YourController::class, 'form'])->name('form');
+
+// Define a named route for the delete method
+// Route::get('/delete', [YourController::class, 'delete'])->name('delete');
+
+// Route::get('/login',[CustomAuthController::class,'login']);
+// Route::get('/registration',[CustomAuthController::class,'registration']);

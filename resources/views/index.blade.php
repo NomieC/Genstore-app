@@ -163,15 +163,15 @@
             while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
             ?>
                 <div class="card">
-                <img class="card-img-top" src="{{ asset('uploads/' . $row['gambar']) }}" alt="Card image cap">
-                    <div class="card-body">
+                <img class="card-img-top" src="<?= "uploads/" . $row['gambar'] ?>" alt="Card image cap">                    
+                <div class="card-body">
                     <?= $row['gambar'] ?>
                         <h5 class="card-title"><?= $row['nama'] ?></h5>
                         <p class="card-text"><?= $row['harga'] ?></p>
                         <p class="card-text"><?= $row['kategori'] ?></p>
                         <p class="card-text"><?= $row['deskripsi'] ?></p>
                         <button class="btn btn-info" onclick="location.href='form.php?nama=<?= $row['nama'] ?>'">Edit</button>
-                        <form action="delete.blade.php" method="post">
+                        <form action="/delete" method="post">
                             <input type="hidden" name="nama" value="<?= $row['nama'] ?>">
                             <button type="submit" class="btn btn-info" name="deleteStudent">Delete</button>
                         </form>
@@ -184,9 +184,14 @@
         </tbody>
         </table>
         <div class="button-container mt-3">
-            <button class="button1" onclick="location.href='form.php'">Tambah Menu</button>
-            <button class="button2" onclick="location.href='delete.php'">Delete Student</button>
+            <form action="/form" method="post">
+                <button class="button1" onclick="window.location.href='{{ route('form') }}'">Tambah Menu</button>
+            </form>
+            <form action="/delete" method="post">
+                <button class="button2" onclick="window.location.href='{{ route('delete') }}'">Delete Student</button>
+            </form>
         </div>
+
     </div>
 
 
