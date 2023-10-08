@@ -175,27 +175,27 @@
         <form action="/createMenu" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input">
-                <input type="text" name="nama" class="input-field" value="<?php echo $nama; ?>" required/>
+                <input type="text" name="nama" class="input-field" required/>
                 <label class="input-label">Name</label>
             </div>
 
             <div class="input">    
-                <input type="text" name="harga" class="input-field" value="<?php echo $harga; ?>" required/>
+                <input type="text" name="harga" class="input-field" required/>
                 <label class="input-label">Harga</label>
             </div>
     
             <div class="input">
-                <input type="text" name="kategori" class="input-field" value="<?php echo $kategori; ?>" required/>
+                <input type="text" name="kategori" class="input-field" required/>
                 <label class="input-label">Kategori</label>
             </div>
             
             <div class="input">
-                <input type="text" name="deskripsi" class="input-field" value="<?php echo $deskripsi; ?>" required/>
+                <input type="text" name="deskripsi" class="input-field" required/>
                 <label class="input-label">Deskripsi</label>
             </div>
 
             <div class="input">
-                <input type="file" name="gambar" value="<?php echo $gambar; ?>" required/>
+                <input type="file" name="gambar" required/>
                 <label class="input-label">Insert Your Photo</label><br />
             </div>
             

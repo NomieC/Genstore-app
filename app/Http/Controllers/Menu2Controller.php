@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class Menu2Controller extends Controller
 {
+    public function index()
+    {
+        $menus = Menu::all();
+        return view('menu.index', compact('menus'));
+    }
     public function createMenu(Request $request){
         $incomingFields = $request->validate([
             'nama' => 'required',

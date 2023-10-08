@@ -94,31 +94,6 @@
 
 <body class="bg-f4e1d2">
 
-    <?php
-    // 1
-    $dsn = "mysql:host=localhost;dbname=Genstore";
-    $kunci = new PDO($dsn, "sqluser", "password");
-    // $dsn = "mysql:host=localhost;dbname=Genstore";
-    // $kunci = new PDO($dsn, "root", "");
-
-    // 2
-    $sql = "SELECT * FROM Menu;";
-
-    // 3
-    $hasil = $kunci->query($sql);
-
-    if (isset($_GET['nama'])) {
-        // $dsn = "mysql:host=localhost;dbname=Genstore";
-        // $kunci = new PDO($dsn, "sqluser", "password");
-        $dsn = "mysql:host=localhost;dbname=Genstore";
-        $kunci = new PDO($dsn, "sqluser", "password");
-        $nama = $_GET['nama'];
-        $sql = "DELETE FROM Menu WHERE nim = '{$nama}'";
-        $stmt = $kunci->prepare($sql);
-        $stmt->execute();
-    }
-    ?>
-
     <script>
         $(document).ready(function() {
             $(".menu-icon").on("click", function() {
@@ -158,37 +133,35 @@
     <div class="container" style="margin-bottom: 20px">
         <h1>Daftar Menu</h1>
 
-            <div class="grid-container grid grid-cols-3 gap-8">
-            <?php
-            while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
-            ?>
+        <div class="grid-container grid grid-cols-3 gap-8">
+            @foreach($menus as $menu)
                 <div class="card">
-                <img class="card-img-top" src="<?= "uploads/" . $row['gambar'] ?>" alt="Card image cap">                    
-                <div class="card-body">
-                    <?= $row['gambar'] ?>
-                        <h5 class="card-title"><?= $row['nama'] ?></h5>
-                        <p class="card-text"><?= $row['harga'] ?></p>
-                        <p class="card-text"><?= $row['kategori'] ?></p>
-                        <p class="card-text"><?= $row['deskripsi'] ?></p>
-                        <button class="btn btn-info" onclick="location.href='form.php?nama=<?= $row['nama'] ?>'">Edit</button>
+                    <img class="card-img-top" src="{{ asset('uploads/' . $menu->gambar) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $menu->nama }}</h5>
+                        <p class="card-text">{{ $menu->harga }}</p>
+                        <p class="card-text">{{ $menu->kategori }}</p>
+                        <p class="card-text">{{ $menu->deskripsi }}</p>
+                        <button class="btn btn-info" onclick="location.href='form.php?nama={{ $menu->nama }}'">Edit</button>
                         <form action="/delete" method="post">
-                            <input type="hidden" name="nama" value="<?= $row['nama'] ?>">
+                            @csrf
+                            <input type="hidden" name="nama" value="{{ $menu->nama }}">
                             <button type="submit" class="btn btn-info" name="deleteStudent">Delete</button>
                         </form>
                     </div>
                 </div>
-            <?php
-            }
-            ?>
-            </div>
+            @endforeach
+        </div>
         </tbody>
         </table>
         <div class="button-container mt-3">
             <form action="/form" method="post">
-                <button class="button1" onclick="window.location.href='{{ route('form') }}'">Tambah Menu</button>
+                @csrf
+                <button class="button1" >Tambah Menu</button>
             </form>
             <form action="/delete" method="post">
-                <button class="button2" onclick="window.location.href='{{ route('delete') }}'">Delete Student</button>
+                @csrf
+                <button class="button2" >Delete Student</button>
             </form>
         </div>
 

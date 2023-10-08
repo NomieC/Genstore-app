@@ -22,12 +22,20 @@ Route::get('/', function () {
     return view('form');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 
 // Menu routes
 Route::post('/createMenu', [Menu2Controller::class, 'createMenu']);
+Route::get('/menus', [Menu2Controller::class, 'index']);
+Route::get('/', [Menu2Controller::class, 'index']);
+Route::post('/delete', [Menu2Controller::class, 'delete']);
+Route::post('/form', [Menu2Controller::class, 'form']);
 
 
 // Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
