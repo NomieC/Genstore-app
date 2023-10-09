@@ -71,9 +71,9 @@ class MenuController extends Controller
             // Store the file with the original filename
             $file->storeAs('uploads', $filename, 'public');
             // Delete the old image if it exists
-            if ($menu->gambar && Storage::disk('public')->exists('uploads/' . $menu->gambar)) {
-                Storage::disk('public')->delete('uploads/' . $menu->gambar);
-            }
+            // if ($menu->gambar && Storage::disk('public')->exists('uploads/' . $menu->gambar)) {
+            //     Storage::disk('public')->delete('uploads/' . $menu->gambar);
+            // }
             // Update the 'gambar' field in the database with the new filename
             $menu->update([
                 'gambar' => $filename,

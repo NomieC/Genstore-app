@@ -38,7 +38,7 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/index', 'MenuController@index');
 
 
-Route::get('/adminDashboard', [MenuController::class, 'index']);
+Route::get('/menus', [MenuController::class, 'index']);
 Route::get('/', [MenuController::class, 'index']);
 // Route::post('/delete', [MenuController::class, 'delete']);
 // Route::post('/form', [MenuController::class, 'form']);
