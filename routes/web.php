@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\YourController;
+use App\Http\Controllers\Menu2Controller;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,28 +18,69 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/input', function () {
+    return view('input');
+});
+
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/login', [UserController::class, 'login']);
+
+// Menu routes
+Route::get('/index', 'MenuController@index');
+
+
+Route::get('/menus', [MenuController::class, 'index']);
+Route::get('/', [MenuController::class, 'index']);
+// Route::post('/delete', [MenuController::class, 'delete']);
+// Route::post('/form', [MenuController::class, 'form']);
+
+Route::get('/edit/{nama}', [MenuController::class, 'editForm']);
+Route::post('/delete', [MenuController::class, 'delete']);
+Route::post('/add', [MenuController::class, 'editForm']);
+
+Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
+Route::post('/addForm', [MenuController::class, 'addForm']);
+
+Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
+
+
+//Punya Fidel
 Route::get('/', function () {
     return view('home', [
         "title" => "Home"
     ]);
 });
+
 Route::get('/home', function () {
     return view('home', [
         "title" => "Home"
     ]);
 });
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About us"
-    ]);
-});
-Route::get('/menu', function () {
-    return view('menu', [
-        "title" => "Menu"
-    ]);
-});
+
 Route::get('/photogalery', function () {
     return view('photogalery', [
         "title" => "Photo Galery"
     ]);
 });
+
+
+// Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
+
+
+// Define a named route for the form method
+// Route::get('/form', [YourController::class, 'form'])->name('form');
+
+// Define a named route for the delete method
+// Route::get('/delete', [YourController::class, 'delete'])->name('delete');
+
+// Route::get('/login',[CustomAuthController::class,'login']);
+// Route::get('/registration',[CustomAuthController::class,'registration']);
