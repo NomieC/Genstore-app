@@ -162,9 +162,9 @@
         </tbody>
         </table>
         <div class="button-container mt-3">
-            <form action="/create-menu" method="post">
+            <form action="/addForm" method="post">
                 @csrf
-                <button class="button1" >Tambah Menu</button>
+                <button class="button1" >Add Menu</button>
             </form>
         </div>
 
