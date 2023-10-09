@@ -195,7 +195,7 @@
                                 <input type="hidden" name="nama" value="{{ $menu->nama }}">
                                 <button type="submit" class="btn btn-info" style="width: 100%" name="deleteMenu">Delete</button>
                             </form>
-                        </div>      
+                        </div>       
                     </div>
                 </div>
             </div>
