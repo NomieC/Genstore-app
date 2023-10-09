@@ -128,7 +128,6 @@
 
 </head>
 <body>
-
     <div class="container">
         <div class="card-image">	
 			<h2 class="card-heading">
