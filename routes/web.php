@@ -18,12 +18,14 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('form');
+Route::get('/form', function () {
+    return view('form', [
+        'title' => 'Form'
+    ]);
 });
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/input', function () {
+    return view('input');
 });
 
 Route::post('/register', [UserController::class, 'register']);
@@ -42,9 +44,31 @@ Route::get('/', [MenuController::class, 'index']);
 Route::get('/edit/{nama}', [MenuController::class, 'editForm']);
 Route::post('/delete', [MenuController::class, 'delete']);
 Route::post('/add', [MenuController::class, 'editForm']);
+
 Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
+Route::post('/addForm', [MenuController::class, 'addForm']);
+
+Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
 
 
+//Punya Fidel
+Route::get('/', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/home', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/photogalery', function () {
+    return view('photogalery', [
+        "title" => "Photo Galery"
+    ]);
+});
 
 
 // Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');

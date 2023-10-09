@@ -67,27 +67,46 @@
             transition: background-color 0.3s;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            margin-top: 30px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: bisque;
-        }
+        .card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0; /* Optional: adjust border-radius as needed */
+}
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-            gap: 20px; 
-        }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: bisque;
+}
 
-        .grid-item {
-            padding: 10px;
-            border-radius: 5px;
-        }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .card-img-top {
+        height: 200px; /* Adjust the height as needed for smaller screens */
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .card-img-top {
+        height: 150px; /* Adjust the height as needed for even smaller screens */
+    } 
+}
+
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -163,9 +182,9 @@
         </tbody>
         </table>
         <div class="button-container mt-3">
-            <form action="/create-menu" method="post">
+            <form action="/addForm" method="post">
                 @csrf
-                <button class="button1" >Tambah Menu</button>
+                <button class="button1" >Add Menu</button>
             </form>
         </div>
 

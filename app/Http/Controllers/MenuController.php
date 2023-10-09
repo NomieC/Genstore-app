@@ -42,7 +42,7 @@ class MenuController extends Controller
         }
     
         Menu::create($incomingFields);
-        return redirect('/index');
+        return redirect('/menus');
     }
     public function updateMenu(Request $request, $nama){
         $menu = Menu::where('nama', $nama)->first();
@@ -168,6 +168,9 @@ class MenuController extends Controller
     public function editForm($nama){
         $menu = Menu::where('nama', $nama)->first();
         return view('form', compact('menu'));
+    }
+    public function addForm(){
+        return view('form');
     }
         
     public function delete(Request $request){

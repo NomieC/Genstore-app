@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Mahasiswa</title>
+@extends('layouts.main')
+
+@section('container')
+<title>{{$title}}</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -125,45 +123,7 @@
             background-color: #5c4938;
         }
     </style>
-
-</head>
-<body>
-    <?php
-            $dsn = "mysql:host=localhost;dbname=Genstore";
-            $kunci = new PDO($dsn, "sqluser", "password");
-        
-        if(isset($_GET['nama'])){
-            $nama = $_GET['nama'];
-        }
-
-        try {
-            $sql = "SELECT * FROM menu WHERE nama = :nama";
-            $statement = $kunci->prepare($sql);
-            $statement->bindParam(':nama', $nama);
-            $statement->execute();
-    
-            $studentData = $statement->fetch(PDO::FETCH_ASSOC);
-    
-            if ($studentData) {
-                $nama = $studentData['nama'];
-                $harga = $studentData['harga'];
-                $kategori = $studentData['kategori'];
-                $deskripsi = $studentData['deskripsi'];
-                $gambar = $studentData['gambar'];
-            } else {
-                $nama = '';
-                $harga = '';
-                $kategori = '';
-                $deskripsi = '';
-                $gambar = '';
-            }
-        } catch (PDOException $error) {
-            echo "Connection failed: " . $error->getMessage();
-        }
-
-    ?>
-
-    <div class="container">
+<div class="container">
         <div class="card-image">	
 			<h2 class="card-heading">
 				Get started
@@ -212,8 +172,9 @@
             <button type="submit" class="button">Update</button>
         </form>
         @else
-        <form action="/createMenu" method="post" enctype="multipart/form-data">
-            @csrf         
+        <form action="/create-Menu" method="post" enctype="multipart/form-data">
+            @csrf  
+            @method('PATCH')          
             <div class="input">
                 <input type="text" name="nama" class="input-field" required />
                 <label class="input-label">Name</label>
@@ -240,12 +201,9 @@
             </div>
         
             <br>
-            <button type="submit" class="button">Update</button>
+            <button type="submit" class="button">Add</button>
         </form>
         @endif
     </div>
 
-
-
-</body>
-</html>
+@endsection
