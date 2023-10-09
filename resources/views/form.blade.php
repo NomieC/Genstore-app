@@ -128,40 +128,6 @@
 
 </head>
 <body>
-    <?php
-            $dsn = "mysql:host=localhost;dbname=Genstore";
-            $kunci = new PDO($dsn, "sqluser", "password");
-        
-        if(isset($_GET['nama'])){
-            $nama = $_GET['nama'];
-        }
-
-        try {
-            $sql = "SELECT * FROM menu WHERE nama = :nama";
-            $statement = $kunci->prepare($sql);
-            $statement->bindParam(':nama', $nama);
-            $statement->execute();
-    
-            $studentData = $statement->fetch(PDO::FETCH_ASSOC);
-    
-            if ($studentData) {
-                $nama = $studentData['nama'];
-                $harga = $studentData['harga'];
-                $kategori = $studentData['kategori'];
-                $deskripsi = $studentData['deskripsi'];
-                $gambar = $studentData['gambar'];
-            } else {
-                $nama = '';
-                $harga = '';
-                $kategori = '';
-                $deskripsi = '';
-                $gambar = '';
-            }
-        } catch (PDOException $error) {
-            echo "Connection failed: " . $error->getMessage();
-        }
-
-    ?>
 
     <div class="container">
         <div class="card-image">	

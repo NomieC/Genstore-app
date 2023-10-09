@@ -18,12 +18,16 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/form', function () {
     return view('form');
 });
 
 Route::get('/index', function () {
     return view('index');
+});
+
+Route::get('/input', function () {
+    return view('input');
 });
 
 Route::post('/register', [UserController::class, 'register']);
@@ -49,7 +53,24 @@ Route::post('/addForm', [MenuController::class, 'addForm']);
 Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
 
 
+//Punya Fidel
+Route::get('/', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
 
+Route::get('/home', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/photogalery', function () {
+    return view('photogalery', [
+        "title" => "Photo Galery"
+    ]);
+});
 
 
 // Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
