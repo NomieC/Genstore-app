@@ -104,7 +104,7 @@
 @media screen and (max-width: 479px) {
     .card-img-top {
         height: 150px; /* Adjust the height as needed for even smaller screens */
-    }
+    } 
 }
 
     </style>
