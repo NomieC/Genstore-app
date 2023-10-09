@@ -31,11 +31,20 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 
 // Menu routes
-Route::post('/createMenu', [Menu2Controller::class, 'createMenu']);
-Route::get('/menus', [Menu2Controller::class, 'index']);
-Route::get('/', [Menu2Controller::class, 'index']);
-Route::post('/delete', [Menu2Controller::class, 'delete']);
-Route::post('/form', [Menu2Controller::class, 'form']);
+Route::get('/index', 'MenuController@index');
+
+
+Route::get('/menus', [MenuController::class, 'index']);
+Route::get('/', [MenuController::class, 'index']);
+// Route::post('/delete', [MenuController::class, 'delete']);
+// Route::post('/form', [MenuController::class, 'form']);
+
+Route::get('/edit/{nama}', [MenuController::class, 'editForm']);
+Route::post('/delete', [MenuController::class, 'delete']);
+Route::post('/add', [MenuController::class, 'editForm']);
+Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
+
+
 
 
 // Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');

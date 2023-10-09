@@ -111,7 +111,7 @@
             }
         })
     </script>
-
+    
     <header>
         <nav>
             <div class="menu-icon">
@@ -134,34 +134,37 @@
         <h1>Daftar Menu</h1>
 
         <div class="grid-container grid grid-cols-3 gap-8">
-            @foreach($menus as $menu)
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('uploads/' . $menu->gambar) }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $menu->nama }}</h5>
-                        <p class="card-text">{{ $menu->harga }}</p>
-                        <p class="card-text">{{ $menu->kategori }}</p>
-                        <p class="card-text">{{ $menu->deskripsi }}</p>
-                        <button class="btn btn-info" onclick="location.href='form.php?nama={{ $menu->nama }}'">Edit</button>
+            @forelse($menus as $menu)
+            <div class="card">
+                <img class="card-img-top" src="{{ asset('uploads/' . $menu->gambar) }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $menu->nama }}</h5>
+                    <p class="card-text">{{ $menu->harga }}</p>
+                    <p class="card-text">{{ $menu->kategori }}</p>
+                    <p class="card-text">{{ $menu->deskripsi }}</p>
+                    <div class="button-container mt-3">
+                        <form action="/edit/{{ $menu->nama }}">
+                            <button class="btn btn-info">Edit</button>
+                        </form>
                         <form action="/delete" method="post">
                             @csrf
                             <input type="hidden" name="nama" value="{{ $menu->nama }}">
                             <button type="submit" class="btn btn-info" name="deleteStudent">Delete</button>
                         </form>
-                    </div>
+                    </div>      
                 </div>
-            @endforeach
+            </div>
+            @empty
+            <p>no menus</p>
+            @endforelse
+        
         </div>
         </tbody>
         </table>
         <div class="button-container mt-3">
-            <form action="/form" method="post">
+            <form action="/create-menu" method="post">
                 @csrf
                 <button class="button1" >Tambah Menu</button>
-            </form>
-            <form action="/delete" method="post">
-                @csrf
-                <button class="button2" >Delete Student</button>
             </form>
         </div>
 

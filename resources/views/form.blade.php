@@ -172,44 +172,77 @@
 			</h2>
 		</div>
 
-        <form action="/createMenu" method="post" enctype="multipart/form-data">
+        @if(isset($menu->nama))
+        <form action="/updateMenu/{{ $menu->nama }}" method="post" enctype="multipart/form-data">
             @csrf
+            @method('PATCH') <!-- Add this line to specify the form method as PATCH -->
+            
+            
             <div class="input">
-                <input type="text" name="nama" class="input-field" required/>
+                <input type="text" name="nama" class="input-field" value="{{ old('nama', $menu->nama) }}" required />
                 <label class="input-label">Name</label>
             </div>
-
-            <div class="input">    
-                <input type="text" name="harga" class="input-field" required/>
+        
+            <div class="input">
+                <input type="text" name="harga" class="input-field" value="{{ old('harga', $menu->harga) }}" required />
                 <label class="input-label">Harga</label>
             </div>
-    
+        
             <div class="input">
-                <input type="text" name="kategori" class="input-field" required/>
+                <input type="text" name="kategori" class="input-field" value="{{ old('kategori', $menu->kategori) }}" required />
                 <label class="input-label">Kategori</label>
             </div>
-            
+        
             <div class="input">
-                <input type="text" name="deskripsi" class="input-field" required/>
+                <input type="text" name="deskripsi" class="input-field" value="{{ old('deskripsi', $menu->deskripsi) }}" required />
                 <label class="input-label">Deskripsi</label>
             </div>
-
+        
             <div class="input">
-                <input type="file" name="gambar" required/>
+                <input type="file" name="gambar" />
                 <label class="input-label">Insert Your Photo</label><br />
             </div>
-            
-            <?php
-                if (isset($gambar) && !empty($gambar)) {
-                    echo '<img src="uploads/' . $gambar . '" alt="Student Image" 
-                        style="max-width: 300px; max-height: 300px; border-radius: 20px; margin: 10px 0px">';
-                }
-            ?>
+        
+            <!-- Display the current image -->
+            @if($menu->gambar)
+                <img src="{{ asset('uploads/' . $menu->gambar) }}" alt="Menu Image" style="max-width: 300px; max-height: 300px; border-radius: 20px; margin: 10px 0px">
+            @endif
+        
             <br>
-            
-            <button type="submit" class="button">Submit</button>
- 
+            <button type="submit" class="button">Update</button>
         </form>
+        @else
+        <form action="/createMenu" method="post" enctype="multipart/form-data">
+            @csrf            
+            <div class="input">
+                <input type="text" name="nama" class="input-field" required />
+                <label class="input-label">Name</label>
+            </div>
+        
+            <div class="input">
+                <input type="text" name="harga" class="input-field" required />
+                <label class="input-label">Harga</label>
+            </div>
+        
+            <div class="input">
+                <input type="text" name="kategori" class="input-field" required />
+                <label class="input-label">Kategori</label>
+            </div>
+        
+            <div class="input">
+                <input type="text" name="deskripsi" class="input-field" required />
+                <label class="input-label">Deskripsi</label>
+            </div>
+        
+            <div class="input">
+                <input type="file" name="gambar" />
+                <label class="input-label">Insert Your Photo</label><br />
+            </div>
+        
+            <br>
+            <button type="submit" class="button">Update</button>
+        </form>
+        @endif
     </div>
 
 
