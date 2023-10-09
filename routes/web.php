@@ -42,7 +42,12 @@ Route::get('/', [MenuController::class, 'index']);
 Route::get('/edit/{nama}', [MenuController::class, 'editForm']);
 Route::post('/delete', [MenuController::class, 'delete']);
 Route::post('/add', [MenuController::class, 'editForm']);
+
 Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
+Route::post('/addForm', [MenuController::class, 'addForm']);
+
+Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
+
 
 
 

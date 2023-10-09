@@ -212,8 +212,9 @@
             <button type="submit" class="button">Update</button>
         </form>
         @else
-        <form action="/createMenu" method="post" enctype="multipart/form-data">
-            @csrf            
+        <form action="/create-Menu" method="post" enctype="multipart/form-data">
+            @csrf  
+            @method('PATCH')          
             <div class="input">
                 <input type="text" name="nama" class="input-field" required />
                 <label class="input-label">Name</label>
@@ -240,7 +241,7 @@
             </div>
         
             <br>
-            <button type="submit" class="button">Update</button>
+            <button type="submit" class="button">Add</button>
         </form>
         @endif
     </div>
