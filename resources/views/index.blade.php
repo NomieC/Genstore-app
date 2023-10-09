@@ -142,6 +142,7 @@
                     <p class="card-text">{{ $menu->harga }}</p>
                     <p class="card-text">{{ $menu->kategori }}</p>
                     <p class="card-text">{{ $menu->deskripsi }}</p>
+                    <p class="card-text">{{ $menu->gambar }}</p>
                     <div class="button-container mt-3">
                         <form action="/edit/{{ $menu->nama }}">
                             <button class="btn btn-info">Edit</button>

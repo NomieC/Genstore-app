@@ -213,7 +213,7 @@
         </form>
         @else
         <form action="/createMenu" method="post" enctype="multipart/form-data">
-            @csrf            
+            @csrf         
             <div class="input">
                 <input type="text" name="nama" class="input-field" required />
                 <label class="input-label">Name</label>
