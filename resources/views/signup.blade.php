@@ -55,7 +55,7 @@
                     </div>
                     <br>
 
-                    <a href="login">Login here</a>
+                    <a href={{route('login')}}>Login here</a>
                 </form>
             </div>
         </div>
