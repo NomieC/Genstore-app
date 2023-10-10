@@ -16,11 +16,9 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/form', function () {
-    return view('form');
-});
-
-Route::get('/index', function () {
-    return view('index');
+    return view('form', [
+        'title' => 'Form'
+    ]);
 });
 
 Route::get('/input', function () {
