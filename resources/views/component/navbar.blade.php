@@ -1,6 +1,6 @@
 <!-- component -->
 <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');">
-    <div class="flex antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light text-5xl">
+    <div class="flex antialiased text-gray-900 bg-gray-100 text-5xl">
         <!-- Loading screen -->
         <div x-ref="loading" class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-stone-600">
             Loading...

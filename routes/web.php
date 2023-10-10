@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,10 @@ use App\Http\Controllers\CustomAuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('/form', function () {
     return view('form');
@@ -56,37 +60,28 @@ Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
 
 // routes/web.php
 
-Route::get('/login', [CustomAuthController::class, 'login']);
+// Route::get('/login', [CustomAuthController::class, 'login']);
 
 
 //Punya Fidel
 Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
+    return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/photogalery', function () {
-    return view('photogalery', [
-        "title" => "Photo Galery"
-    ]);
-});
+require __DIR__.'/auth.php';
 
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
 
-// Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
-
-
-// Define a named route for the form method
-// Route::get('/form', [YourController::class, 'form'])->name('form');
-
-// Define a named route for the delete method
-// Route::get('/delete', [YourController::class, 'delete'])->name('delete');
-
-// Route::get('/login',[CustomAuthController::class,'login']);
-// Route::get('/registration',[CustomAuthController::class,'registration']);
+require __DIR__.'/adminauth.php';

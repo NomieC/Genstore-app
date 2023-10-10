@@ -13,22 +13,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md4 col-md-offset" style="margin-top: 20px">
-                <h4>Registration</h4>
+                <h4>Log in</h4>
                 <form action="">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" placeholder="Enter username/email">
+                        <label for="name">Username/Email</label>
+                        <input type="text" class="form-control" placeholder="Enter username/email" name="loginname">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="text" class="form-control" placeholder="Your Password">
+                        <input type="text" class="form-control" placeholder="Your Password" name="loginpassword">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Register</button>
                     </div>
                     <br>
 
-                    <a href="signup">Register here</a>
+                    <a href="signup">Register</a>
                 </form>
             </div>
         </div>
