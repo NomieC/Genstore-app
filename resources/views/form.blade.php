@@ -123,7 +123,10 @@
             background-color: #5c4938;
         }
     </style>
-<div class="container">
+
+</head>
+<body>
+    <div class="container">
         <div class="card-image">	
 			<h2 class="card-heading">
 				Get started

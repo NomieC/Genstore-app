@@ -56,8 +56,27 @@ class MenuController extends Controller
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:40960',
         ]);
     
-        try {
-            // Update the menu item with the new data (excluding 'gambar' field)
+
+        // Update the menu item with the new data
+        $menu->update([
+            'nama' => $request->input('nama'),
+            'harga' => $request->input('harga'),
+            'kategori' => $request->input('kategori'),
+            'deskripsi' => $request->input('deskripsi'),
+        ]);
+    
+        // Update the image if a new image is uploaded
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            // Get the original filename
+            $filename = $file->getClientOriginalName();
+            // Store the file with the original filename
+            $file->storeAs('uploads', $filename, 'public');
+            // Delete the old image if it exists
+            // if ($menu->gambar && Storage::disk('public')->exists('uploads/' . $menu->gambar)) {
+            //     Storage::disk('public')->delete('uploads/' . $menu->gambar);
+            // }
+            // Update the 'gambar' field in the database with the new filename
             $menu->update([
                 'nama' => $request->input('nama'),
                 'harga' => $request->input('harga'),

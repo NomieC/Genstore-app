@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\YourController;
-use App\Http\Controllers\Menu2Controller;
-use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +24,12 @@ Route::get('/form', function () {
 Route::get('/input', function () {
     return view('input');
 });
+Route::get('/signup', function () {
+    return view('signup');
+});
 
-Route::post('/register', [UserController::class, 'register']);
+Route::post('/register', [UserController::class, 'register'])->name('register');
+// Route::post('/register', [UserController::class, 'register']);
 Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 
