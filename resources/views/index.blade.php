@@ -21,9 +21,15 @@
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <link href="../dist/output.css" rel="stylesheet"> -->
-
+    {{-- Font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
     <style>
+        html * {
+            font-family: 'Cormorant', serif; !important
+        }
+
         header {
             position: relative;
             z-index: 10;
@@ -48,19 +54,10 @@
             margin-bottom: 10px;
         }
 
-        .button2 {
-            background-color: gray;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
         .card{
             height: 100%;
             background-color: #f1ebdb;
+            border-radius: 2px;
         }
 
         .card-name-box{
@@ -72,24 +69,35 @@
         }
 
         .card-title{
+            font-size: 3.5ch;
+            font-weight: bold;
+        }
+
+        .card-category {
             font-size: 2ch;
             font-weight: bold;
         }
 
         .card-desc{
-            font-weight: 200;
+            font-weight: 250;
         }
 
         .card-price{
+            font-size: 3ch;
             font-weight: bold;
             margin-bottom: 10px;
+        }
+
+        .card-button{
+            font-size: 3ch;
+            background-color: #5d5552;
         }
 
         .card-img-top {
             width: 100%;
             height: 50%;
             object-fit: cover;
-            border-radius: 5px 5px 0 0; /* Optional: adjust border-radius as needed */
+            border-radius: 2px; /* Optional: adjust border-radius as needed */
         }
 
         .container {
@@ -127,7 +135,6 @@
                 height: 150px; /* Adjust the height as needed for even smaller screens */
             } 
         }
-
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -188,12 +195,13 @@
                         <p class="card-price">Rp{{ $menu->harga }}</p>
                         <div class="button-container grid grid-cols-2 gap-2">
                             <form action="/edit/{{ $menu->nama }}">
-                                <button class="btn btn-info" style="width: 100%">Edit</button>
+                                <button class="card-button" style="width: 100%">Edit</button>
                             </form>
                             <form action="/delete" method="post">
                                 @csrf
                                 <input type="hidden" name="nama" value="{{ $menu->nama }}">
-                                <button type="submit" class="btn btn-info" style="width: 100%" name="deleteMenu">Delete</button>
+                                <button type="submit" class="card-button" style="width: 100%" name="deleteMenu">Delete</button>
+
                             </form>
                         </div>       
                     </div>

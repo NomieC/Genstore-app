@@ -7,15 +7,12 @@ html, body {
 body {
     position: relative; /* Set body to relative positioning */
     background-color: #f4e1d2;
-    font-family: "Helvetica Neue", sans-serif;
     font-weight: lighter;
     margin: 0;
     padding: 0;
     width: 100%;
     z-index: 1; /* Set a higher z-index value for the body */
 }
-
-
 
 .logo {
     line-height: 60px;
