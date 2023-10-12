@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,10 @@ Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
 Route::post('/addForm', [MenuController::class, 'addForm']);
 
 Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
+
+// routes/web.php
+
+Route::get('/login', [CustomAuthController::class, 'login']);
 
 
 //Punya Fidel

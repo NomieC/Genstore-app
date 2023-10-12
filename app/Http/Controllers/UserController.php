@@ -49,4 +49,6 @@ class UserController extends Controller
         return redirect('/');
         // return redirect()->route('/menus')->with('success', 'Registration successful! Please log in.');
     }
+
+    
 }
