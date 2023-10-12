@@ -16,6 +16,13 @@ class MenuController extends Controller
         // $menus = DB::table('menus')->get(); // Assuming your table name is 'menus'
         // return view('menu.index', ['menus' => $menus]);
     }
+    public function usermenu()
+    {
+        $menus = Menu::all(); // Assuming Menu is your model
+        return view('usermenu', compact('menus'));
+        // $menus = DB::table('menus')->get(); // Assuming your table name is 'menus'
+        // return view('menu.index', ['menus' => $menus]);
+    }
     public function createMenu(Request $request)
     {
         $incomingFields = $request->validate([

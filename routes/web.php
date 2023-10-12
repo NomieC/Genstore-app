@@ -84,3 +84,16 @@ Route::get('/photogalery', function () {
 
 // Route::get('/login',[CustomAuthController::class,'login']);
 // Route::get('/registration',[CustomAuthController::class,'registration']);
+
+
+
+
+
+//menu rici
+
+
+Route::get('/usermenu', function () {
+    return view('usermenu');
+});
+
+Route::get('/usermenu', [MenuController::class, 'usermenu']);
