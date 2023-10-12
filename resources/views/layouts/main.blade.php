@@ -35,7 +35,7 @@
         #5d5552 SC 08 Ebony
         #d8c6c6 SC 93 Lily
         #beaab5 SC 94 Velvet Plum
-        #606372 SC 98 Parisian Blue
+        #606372 SC 98 Parisian Blue ->Buat navbar
         #bdd0ca SC 71 Mint
         #8ea7a3 SC 72 Sapphire
         #626e7c SC 83 Denim -->

@@ -1,5 +1,5 @@
 <button class="btn" data-speed="0.3" type="button" href="../menu.blade.php">
-	<strong class="strong">Get Started</strong>
+	<strong class="strong">View Menu</strong>
 	<div class="containerstars">
 		<div class="stars"></div>
 	</div>
