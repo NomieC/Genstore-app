@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
     <style>
         html * {
-            font-family: 'Cormorant', serif; !important
+            font-family: 'Cormorant', serif;
         }
 
         header {

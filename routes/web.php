@@ -48,7 +48,7 @@ Route::post('/delete', [MenuController::class, 'delete']);
 Route::post('/add', [MenuController::class, 'editForm']);
 
 Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
-Route::post('/addForm', [MenuController::class, 'addForm']);
+Route::post('/addForm', [MenuController::class, 'addForm'])->name('addForm');
 
 Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
 
