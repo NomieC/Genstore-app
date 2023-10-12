@@ -21,11 +21,9 @@ Route::get('/', function () {
 });
 
 Route::get('/form', function () {
-    return view('form');
-});
-
-Route::get('/index', function () {
-    return view('index');
+    return view('form', [
+        'title' => 'Form'
+    ]);
 });
 
 Route::get('/input', function () {
@@ -54,7 +52,7 @@ Route::post('/delete', [MenuController::class, 'delete']);
 Route::post('/add', [MenuController::class, 'editForm']);
 
 Route::patch('/updateMenu/{nama}', [MenuController::class, 'updateMenu']);
-Route::post('/addForm', [MenuController::class, 'addForm']);
+Route::post('/addForm', [MenuController::class, 'addForm'])->name('addForm');
 
 Route::patch('/create-Menu', [MenuController::class, 'createMenu']);
 
