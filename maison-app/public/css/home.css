@@ -12,6 +12,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     background: #000000;
     color: #fff;
@@ -48,31 +49,15 @@ header:before {
   background-size: cover;
 }
 
-nav,
-.header-bottom {
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
-    position: relative;
-}
-
-.logo a {
-    color: #fff;
-    font-size: 2rem;
-}
-
-.btn-sign-up {
-    padding: 0.7rem 2rem;
-    background: black;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 50px;
-    transition: .3s;
-}
-
-.btn-sign-up:hover {
-    background: white;
-    color: black;
+    padding: 1rem 2rem;
+    z-index: 1000; /* Set a high z-index value to ensure it appears above other elements */
 }
 
 .header-title {
@@ -81,6 +66,82 @@ nav,
     position: relative;
     font-weight: bold;
     letter-spacing: 2px;
+    justify-content: center;
+    margin: auto auto;
+}
+
+.logo img {
+    width: 100%; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    position: relative;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+}
+
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    color: transparent;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    border: 1px solid black;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
+/* Button Styles */
+.btn-sign-up {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.btn-sign-up:hover {
+    background-color: white;
+    color: black;
 }
 
 .today-date {
@@ -104,10 +165,36 @@ nav,
     color: #fff;
 }
 
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
+/* intro section */
+.parallax-intro {
+    background-image: url('../assets/intro.jpg');
+    min-height: 800px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .intro-text {
+    width: 400px;
+    margin: auto auto;
+    font-size: 2rem;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
 /* misc section */
 #misc {
     padding-left: 81px;
     padding-right: 21px;
+    padding-top: 100px;
 }
 
 .misc-container {
@@ -123,16 +210,127 @@ nav,
 }
 
 .misc-img1, .misc-img2, .misc-img3 {
-    width: 300px;
+    width: 350px;
     max-width: 100%;
-    height: 200px;
+    height: 250px;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 10px;
-    
+    transition: transform 0.5s;
+}
+
+.mobile-view-misc1,
+.mobile-view-misc2,
+.mobile-view-misc3 {
+    display: none;
 }
 
 
+@media only screen and (max-width: 700px) {
+    #misc {
+        padding: 10px;
+    }
+
+    .misc-image-box {
+        display: none;
+    }
+
+    .misc-container {
+        display: block;
+        text-align: center;
+        justify-content: center;
+        margin: auto auto;
+    }
+
+    .mobile-view-misc1,
+    .mobile-view-misc2,
+    .mobile-view-misc3 {
+        display: block;
+        width: 80%; 
+        height: 500px; 
+        background-size: cover; 
+        background-position: center; 
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+/* @keyframes scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .misc-image-box .image-container {
+    animation: scroll 10s linear infinite; 
+  }
+  
+  .image-container {
+    height: 100vh; 
+    overflow: hidden; 
+  } */
+  
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+  }
+
+  #group1 {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  #group2 {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+
+.misc-img1{
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.misc-img2{
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 1;
+}
+
+.misc-img3{
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 7;
+}
 
 .misc-image-box {
     justify-content: space-between;
@@ -188,16 +386,170 @@ nav,
     font-size: 22px;
 }
 
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
+/* about us section */
+.grid-container {  
+    margin-top: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 100px;
+    gap: 20px 20px;
+    grid-template-areas:
+      "satu satu dua"
+      "satu satu dua"
+      "satu satu dua"
+      "satu satu dua"
+      "satu satu dua"
+      "tiga empat dua"
+      "tiga empat lima"
+      "tiga empat lima"
+      "enam empat lima"
+      "enam delapan delapan"
+      "tujuh delapan delapan"
+      "tujuh delapan delapan"
+      "tujuh delapan delapan"
+      "tujuh delapan delapan"
+      "sembilan sembilan sepuluh"
+      "sembilan sembilan sepuluh"
+      "sembilan sembilan sepuluh"
+      "sembilan sembilan sepuluh"
+      "sebelas duabelas tigabelas"
+      "sebelas duabelas tigabelas"
+      "sebelas duabelas tigabelas"
+      "sebelas duabelas tigabelas"
+      ". . ."
+      ". . .";
+}
+  
+.satu { grid-area: satu; }
+.dua { grid-area: dua; }
+.empat { grid-area: empat; }
+.lima { grid-area: lima; }
+.tiga { grid-area: tiga; }
+.enam { grid-area: enam; }
+.tujuh { grid-area: tujuh; }
+.delapan { grid-area: delapan; }
+.sembilan { grid-area: sembilan; }
+.sepuluh { grid-area: sepuluh; }
+.sebelas { grid-area: sebelas; }
+.duabelas { grid-area: duabelas; }
+.tigabelas { grid-area: tigabelas; }
+
+.satu {
+    background-image: url("../assets/grid/one.jpg");
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.dua {
+    background-color: #111;    
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.tiga {
+    background-image: url("../assets/grid/two.jpg");
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.empat {
+    background-color: #32323a;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.lima {
+    background-image: url("../assets/grid/three.jpg");
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.enam {
+    background-image: url("../assets/grid/four.jpg");
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.tujuh {
+    background-color: #9e822f;    
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.delapan {
+    background-image: url("../assets/grid/five.jpg");
+    background-color: #f0f0f0;
+    background-position: 70%;
+    border-radius: 4px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sembilan {
+    background-image: url("../assets/grid/six.jpg");
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.sepuluh {
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.sebelas {
+    background-color: #9e822f;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.duabelas {
+    background-image: url("../assets/grid/seven.jpg");
+    background-color: #f0f0f0;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.tigabelas {
+    background-color: #32323a;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
 /* about section */
 #about {
     width: 100%;
     padding: 2.5rem 0;
+    padding-top: 400px;
 }
 
 .about-container {
     width: 900px;
     margin: auto auto;
-}
+} 
 
 .image-gallery {
     display: flex;
@@ -254,9 +606,7 @@ footer i {
 }
 
 @media only screen and (max-width: 950px) {
-    .about-container {
-        width: 90%;
-    }
+    
 }
 
 @media only screen and (max-width: 768px) {
@@ -266,6 +616,10 @@ footer i {
 }
 
 @media only screen and (max-width: 950px) {
+    .about-container {
+        width: 90%;
+    }
+
     .today-date {
         display: none;
     }
