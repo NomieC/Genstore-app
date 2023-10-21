@@ -390,6 +390,27 @@ nav {
 /*========================================================================================================*/
 /*========================================================================================================*/
 /* about us section */
+.grid-text-container {
+    width: 85%;
+    height: 70%;
+    min-width: auto;
+    object-fit: contain;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+}
+
+.grid-title {
+    font-size: 80px;
+}
+
+.grid-normaltext {
+    font-weight: 600;
+    font-size: larger;
+}
+
 .grid-container {  
     margin-top: 400px;
     display: grid;
@@ -509,6 +530,7 @@ nav {
 
 .sepuluh {
     background-color: #f0f0f0;
+    color: #000;
     background-position: 50%;
     background-size: cover;
     border-radius: 4px;
@@ -534,6 +556,12 @@ nav {
     background-position: 50%;
     background-size: cover;
     border-radius: 4px;
+}
+
+@media only screen and (max-width: ) {
+    .grid-container {
+        
+    }
 }
 
 /*========================================================================================================*/

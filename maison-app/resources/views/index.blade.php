@@ -11,7 +11,6 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet" type="text/css" >
 
     {{-- script --}}
-    <script src="{{ mix('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{{asset('js/home.js')}}"></script>
 
@@ -121,20 +120,46 @@
             <div class="satu"></div>
             <div class="dua">
                 <div class="grid-text-container">
-                    
+                    <h1 class="grid-title">About Us</h1>
+                    <p class="grid-normaltext">Welcome to Maison, where culinary excellence meets warm hospitality. At Maison, we believe in the power of delightful dining experiences. Our chefs, inspired by global flavors and local ingredients, craft dishes that tantalize taste buds and create lasting memories.</p>
                 </div>
             </div>
-            <div class="empat"></div>
-            <div class="lima"></div>
             <div class="tiga"></div>
+            <div class="empat">
+                <div class="grid-text-container">
+                    <h1 class="grid-title">Our Mission</h1>
+                    <p class="grid-normaltext">We are dedicated to providing high-quality products and excellent customer service to enhance your experience.</p>
+                </div>
+            </div>
+            <div class="lima"></div>
             <div class="enam"></div>
-            <div class="tujuh"></div>
+            <div class="tujuh">
+                <div class="grid-text-container">
+                    <h1 class="grid-title">Our Values</h1>
+                    <p class="grid-normaltext">We uphold integrity, innovation, and customer satisfaction as our core values in every aspect of our business.</p>
+                </div>
+            </div>
             <div class="delapan"></div>
             <div class="sembilan"></div>
-            <div class="sepuluh"></div>
-            <div class="sebelas"></div>
+            <div class="sepuluh">
+                <div class="grid-text-container">
+                    <h1 class="grid-title">Community Engagement</h1>
+                    <p class="grid-normaltext">We actively participate in community events and support local initiatives to give back to the community that supports us.</p>
+                </div>
+            </div>
+            <div class="sebelas">
+                <div class="grid-text-container">
+                    <h1 class="grid-title">Visit Us</h1>
+                    <p class="grid-normaltext">Come and experience our restaurant located in the heart of the city.</p>
+                </div>
+            </div>
             <div class="duabelas"></div>
-            <div class="tigabelas"></div>
+            <div class="tigabelas">
+                <div class="grid-text-container">
+                    <h1 class="grid-title">Awards</h1>
+                    <p class="grid-normaltext">We've been honored with prestigious awards for our culinary excellence and sustainable practices.</p>
+                </div>
+            </div>
           </div>
         
     </section>
