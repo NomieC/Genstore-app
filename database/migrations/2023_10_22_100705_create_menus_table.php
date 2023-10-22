@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('menu_price');
             $table->string('menu_type');
             $table->string('menu_category');
-            $table->string('menu_desc');
+            $table->string('menu_desc');    
             $table->string('menu_image');
         });
     }
