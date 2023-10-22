@@ -161,7 +161,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Damson jelly, pistachio yogurt, spiced port jelly, marinated liver. A gourmet dish featuring rich and delicate duck liver wrapped and cooked to perfection, offering a luxurious and flavorful dining experience.',
-                'menu_image' => 'Duck Liver Ballotine.png',
+                'menu_image' => 'Ballotine of Duck Liver with Damson and Pistachio.png',
             ],
             // Heritage Potato Oyster and Crème Crue
             [
@@ -170,7 +170,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Potatoes, oysters, and crème crue. A refined combination of heritage potatoes, oysters, and crème crue for an elegant culinary experience.',
-                'menu_image' => 'Heritage Potato Oyster.png',
+                'menu_image' => 'Heritage Potato Oyster and Crème Crue.png',
             ],
             // Langoustine À la Nage and Bronze Fennel
             [
@@ -179,7 +179,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Scottish duck, white wine, fennel, leeks. Succulent langoustine in flavorful broth, served with aromatic bronze fennel for a luxurious experience.',
-                'menu_image' => 'Langoustine a la Nage.png',
+                'menu_image' => 'Langoustine À la Nage and Bronze Fennel.png',
             ],
             // Anjou Pigeon À la Presse
             [
@@ -188,7 +188,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Anjou pigeon, pomme soufflée, and baked kohlrabi. An elegant dish featuring Anjou pigeon, pomme soufflée, and baked kohlrabi, delivering a refined and flavorful dining experience.',
-                'menu_image' => 'Anjou Pigeon a la Presse.png',
+                'menu_image' => 'Anjou Pigeon À la Presse.png',
             ],
             // Grill
             // Snacks & Side Dishes

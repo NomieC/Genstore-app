@@ -24,17 +24,18 @@
 <div class="menu-container card-menu">
     @foreach ($menus as $menu)
         <div class="card">
-            <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="Card image cap">
+            <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
             <div class="card-body">
                 <h5 class="card-title">{{ $menu->menu_name }}</h5>
                 <p class="card-text">{{ $menu->menu_desc }}</p>
                 <p class="card-text"><strong>Type:</strong> {{ $menu->menu_type }}</p>
                 <p class="card-text"><strong>Category:</strong> {{ $menu->menu_category }}</p>
-                <p class="card-text"><strong>Price:</strong> {{ $menu->menu_price }}</p>
+                <p class="card-text"><strong>Price:</strong> £{{ $menu->menu_price }}</p>
                 <p class="card-text"><strong>path:</strong> {{ $menu->menu_image }}</p>
             </div>
         </div>
     @endforeach
+    
 </div>
 
 
