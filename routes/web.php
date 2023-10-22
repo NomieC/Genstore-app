@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');//->middleware(['auth', 'verified']);
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
-    // Add the 'cart' route here
-    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    return view('index');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+});
 
-Route::get('/admin', [AdminController::class,'index'])->name('admin');
-
-require __DIR__.'/auth.php';
+Route::get('/admin', [MenuController::class, 'index']);
+Route::get('/menus/{id}', [MenuController::class, 'show']);
+Route::get('/menus/create', [MenuController::class, 'create']);
+Route::post('/menus', [MenuController::class, 'store']);
+Route::get('/menus/{id}/edit', [MenuController::class, 'edit']);
+Route::put('/menus/{id}', [MenuController::class, 'update']);
+Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
