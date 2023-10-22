@@ -33,34 +33,76 @@ class MenuController extends Controller
     }
 
     // Update the menu item with edited data
+    // public function update(Request $request, $id)
+    // {
+    //     $menu = Menu::findOrFail($id);
+    
+    //     // Update other fields
+    //     $menu->menu_name = $request->input('menu_name');
+    //     $menu->menu_price = $request->input('menu_price');
+    //     $menu->menu_type = $request->input('menu_type');
+    //     $menu->menu_category = $request->input('menu_category');
+    //     $menu->menu_desc = $request->input('menu_desc');
+    
+    //     // Handle menu image upload
+    //     if ($request->hasFile('menu_image')) {
+    //         // Delete the previous menu image, if it exists
+    //         // Storage::delete('public/assets/Foods' . $menu->menu_image);
+    
+    //         // // Get the original filename
+    //         // $originalFilename = $request->file('menu_image')->getClientOriginalName();
+    
+    //         // // Store the new menu image with the original filename
+    //         // $imagePath = $request->file('menu_image')->storeAs('assets/Foods/', $originalFilename);
+    //         // $menu->menu_image = $originalFilename;
+
+    //         $file = $request->file('menu_image');
+    //         $filename = $file->getClientOriginalName();
+    //         $file->storeAs('assets/Foods', $filename, 'public');
+    //         $incomingFields['menu_image'] = $filename;
+    //     }
+    
+    //     $menu->save();
+    
+    //     return redirect('/admin')->with('success', 'Menu item updated successfully!');
+
+        
+    // }
     public function update(Request $request, $id)
     {
         $menu = Menu::findOrFail($id);
+
+        $request->validate([
+            'menu_name'  => 'required',
+            'menu_price'  => 'required',
+            'menu_type'  => 'required', 
+            'menu_category'  => 'required',
+            'menu_desc'  => 'required',
+            'menu_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:42048'
+        ]);
     
-        // Update other fields
-        $menu->menu_name = $request->input('menu_name');
-        $menu->menu_price = $request->input('menu_price');
-        $menu->menu_type = $request->input('menu_type');
-        $menu->menu_category = $request->input('menu_category');
-        $menu->menu_desc = $request->input('menu_desc');
-    
-        // Handle menu image upload
+        $menu->update([
+            'menu_name'  => $request->input('menu_name'),
+            'menu_price'  => $request->input('menu_price'),
+            'menu_type'  => $request->input('menu_type'), 
+            'menu_category'  => $request->input('menu_category'),
+            'menu_desc'  => $request->input('menu_desc'),
+        ]);
+
         if ($request->hasFile('menu_image')) {
-            // Delete the previous menu image, if it exists
-            Storage::delete('public/menu_images/' . $menu->menu_image);
-    
+            $file = $request->file('menu_image');
             // Get the original filename
-            $originalFilename = $request->file('menu_image')->getClientOriginalName();
-    
-            // Store the new menu image with the original filename
-            $imagePath = $request->file('menu_image')->storeAs('public/menu_images', $originalFilename);
-            $menu->menu_image = $originalFilename;
+            $filename = $file->getClientOriginalName();
+            // Store the file with the original filename
+            $file->storeAs('public/assets/Foods', $filename);
+            $menu->update([
+                'menu_image' => $filename,
+            ]);
         }
-    
-        $menu->save();
     
         return redirect('/admin')->with('success', 'Menu item updated successfully!');
     }
+
 
     // Delete the menu item
     public function destroy($id)

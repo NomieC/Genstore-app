@@ -46,6 +46,7 @@
                         <h5 class="card-title">{{ $menu->menu_name }}</h5>
                         <p class="card-desc">{{ $menu->menu_desc }}</p>
                         <p class="card-price">£{{ $menu->menu_price }}</p>
+                        <p class="card-image">£{{ $menu->menu_image }}</p>
                         <div class="crud-button">
                             <a href="{{ route('menu.edit', $menu->id) }}" class="card-button edit-button" style="border: 2px solid black">Edit</a>
                             <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
