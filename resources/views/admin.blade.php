@@ -47,7 +47,7 @@
                         <p class="card-desc">{{ $menu->menu_desc }}</p>
                         <p class="card-price">£{{ $menu->menu_price }}</p>
                         <div class="crud-button">
-                            <a href="{{ route('menu.edit', $menu->id) }}" class="card-button" style="border: 2px solid black">Edit</a>
+                            <a href="{{ route('menu.edit', $menu->id) }}" class="card-button edit-button" style="border: 2px solid black">Edit</a>
                             <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

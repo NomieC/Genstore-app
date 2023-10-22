@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -35,15 +36,29 @@ class MenuController extends Controller
     public function update(Request $request, $id)
     {
         $menu = Menu::findOrFail($id);
-        $menu->update([
-            'menu_name' => $request->input('menu_name'),
-            'menu_price' => $request->input('menu_price'),
-            'menu_type' => $request->input('menu_type'),
-            'menu_category' => $request->input('menu_category'),
-            'menu_desc' => $request->input('menu_desc'),
-            'menu_image' => $request->input('menu_image'),
-        ]);
-
+    
+        // Update other fields
+        $menu->menu_name = $request->input('menu_name');
+        $menu->menu_price = $request->input('menu_price');
+        $menu->menu_type = $request->input('menu_type');
+        $menu->menu_category = $request->input('menu_category');
+        $menu->menu_desc = $request->input('menu_desc');
+    
+        // Handle menu image upload
+        if ($request->hasFile('menu_image')) {
+            // Delete the previous menu image, if it exists
+            Storage::delete('public/menu_images/' . $menu->menu_image);
+    
+            // Get the original filename
+            $originalFilename = $request->file('menu_image')->getClientOriginalName();
+    
+            // Store the new menu image with the original filename
+            $imagePath = $request->file('menu_image')->storeAs('public/menu_images', $originalFilename);
+            $menu->menu_image = $originalFilename;
+        }
+    
+        $menu->save();
+    
         return redirect('/admin')->with('success', 'Menu item updated successfully!');
     }
 
