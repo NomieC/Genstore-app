@@ -18,6 +18,7 @@
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="">About Maison</a>
+            <a href="/hours-location">Hours & Location</a>
             <div class="dropdown">
                 <button class="dropbtn">Menus</button>
                 <div class="dropdown-content">
@@ -27,9 +28,16 @@
                     <a href="">Bar</a>
                 </div>
             </div>
-            <a href="/hours-location">Hours & Location</a>
-            <a href="/book-now">Book Now</a>
-            <a href="/sign-up" class="btn-sign-up">Sign up</a>
+            <div class="dropdown">
+                <button class="dropbtn">Events</button>
+                <div class="dropdown-content">
+                    <a href="">Christmas</a>
+                    <a href="">Valentine</a>
+                    <a href="">Sunday Lunch</a>
+                </div>
+            </div>
+            
+            <a href="/sign-up" class="btn-sign-up">Book now</a>
         </div>
     </nav>
 
