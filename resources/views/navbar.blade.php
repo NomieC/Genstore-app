@@ -17,7 +17,7 @@
         
         <div class="nav-links">
             <a href="/">Home</a>
-            <a href="">About Maison</a>
+            <a href="/#about-us">About Maison</a>
             <a href="/hours-location">Hours & Location</a>
             <div class="dropdown">
                 <button class="dropbtn">Menus</button>

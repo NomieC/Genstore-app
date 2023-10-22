@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/admin', [MenuController::class, 'index']);
+Route::get('/menus/{id}', [MenuController::class, 'show']);
+Route::get('/menus/create', [MenuController::class, 'create']);
+Route::post('/menus', [MenuController::class, 'store']);
+Route::get('/menus/{id}/edit', [MenuController::class, 'edit']);
+Route::put('/menus/{id}', [MenuController::class, 'update']);
+Route::delete('/menus/{id}', [MenuController::class, 'destroy']);

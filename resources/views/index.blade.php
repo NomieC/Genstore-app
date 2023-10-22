@@ -93,7 +93,7 @@
     </section>
 
     {{-- grid section --}}
-    <section class="grid-section">
+    <section id="about-us" class="grid-section">
         <div class="grid-container">
             <div class="satu"></div>
             <div class="dua">
@@ -142,7 +142,7 @@
     </section>
 
     {{-- About --}}
-    <section id="about">
+    <section>
         <div class="about-container">
             <h1 style="text-align: center; margin-bottom: 80px">Our Courses</h1>
             <div class="image-gallery">
@@ -254,6 +254,29 @@
                 });
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // If target element is not found, redirect to home page with the target ID as a fragment
+                        window.location.href = `/#${about}`;
+                    }
+                });
+            });
+        });
+
+
 
 </script>
 </html>
