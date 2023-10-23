@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +18,38 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
+})->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');//->middleware(['auth', 'verified']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // Add the 'cart' route here
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
-Route::get('/admin', [MenuController::class, 'index']);
+Route::get('/admin', [AdminController::class,'index'])->name('admin');
+
+Route::get('/admin', [MenuController::class, 'index'])->name('menu');
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get('/menus/create', [MenuController::class, 'create']);
 Route::post('/menus', [MenuController::class, 'store']);
-Route::get('/menus/{id}/edit', [MenuController::class, 'edit']);
-Route::put('/menus/{id}', [MenuController::class, 'update']);
-Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
+
+
+Route::post('/admin/add', [MenuController::class, 'add']);
+Route::post('/admin/create', [MenuController::class, 'create']);
+Route::get('/admin/edit/{id}', [MenuController::class, 'edit'])->name('menu.edit');
+Route::put('/admin/update/{id}', [MenuController::class, 'update'])->name('menu.update');
+Route::delete('/admin/delete/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
+
+
+
+
+require __DIR__.'/auth.php';

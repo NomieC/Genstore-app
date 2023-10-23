@@ -1,3 +1,7 @@
 import './bootstrap';
-require('parallax.js');
-require('parallax.min.js');
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();

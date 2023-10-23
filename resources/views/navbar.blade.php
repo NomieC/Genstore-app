@@ -37,7 +37,28 @@
                 </div>
             </div>
             
-            <a href="/sign-up" class="btn-sign-up">Book now</a>
+            <div >
+                @if (Route::has('login'))
+                <div >
+                    @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); this.closest('form').submit();"
+                        class="btn-sign-up">
+                            Log Out
+                        </a>
+                    </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn-sign-up">Log in</a>
+            
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn-sign-up">Register</a>
+                        @endif
+                    @endauth
+                </div>
+                @endif
+            </div>
         </div>
     </nav>
 
