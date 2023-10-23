@@ -35,7 +35,6 @@
     @include('navbar')
 
     <section id="table-menu">
-        {{-- <h1 class="filter-title">Menus</h1> --}}
         <div class="filter-container">
             <div class="filter-list">
                 <li class="{{ request('category') ? '' : 'active' }}"><a href="{{ route('menu', ['category' => '']) }}" class="filter-button">All</a></li> 
