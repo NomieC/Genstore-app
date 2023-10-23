@@ -8,6 +8,7 @@
 
     {{-- style --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
 
     {{-- script --}}
@@ -54,7 +55,7 @@
         <div class="menu-container card-menu">
             <div class="card-container">
                     @foreach ($menus as $menu)
-                    <a href="#!" class="card">
+                    <a href="#!" class="card" data-aos="fade-up">
                         <img class="front" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
                         <div class="back">
                             <div>
@@ -86,5 +87,12 @@
             
     </section>   
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 500,
+        });
+    </script>
 </body>
 </html>
