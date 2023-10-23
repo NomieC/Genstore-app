@@ -29,7 +29,7 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('edit');
+        return view('edit', compact('menu'));
     }
     
     public function update(Request $request, $id)

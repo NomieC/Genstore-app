@@ -37,28 +37,51 @@
         
         
 
-        <div class="menu-container card-menu">
-            @foreach ($menus as $menu)
-                <div class="card">
-                    <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
-                    <div class="card-body">
-                        <p class="card-category">{{ $menu->menu_category }}</p>
-                        <h5 class="card-title">{{ $menu->menu_name }}</h5>
-                        <p class="card-desc">{{ $menu->menu_desc }}</p>
-                        <p class="card-price">£{{ $menu->menu_price }}</p>
-                        <div class="crud-button">
-                            <form action="admin/edit/{{ $menu->id }}">
-                                <button class="card-button">Edit</button>
-                            </form>
-                            <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="card-button">Delete</button>
-                            </form>
-                        </div>
-                    </div>
+        {{-- <div class="card">
+            <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
+            <div class="card-body">
+                <p class="card-category">{{ $menu->menu_category }}</p>
+                <h5 class="card-title">{{ $menu->menu_name }}</h5>
+                <p class="card-desc">{{ $menu->menu_desc }}</p>
+                <p class="card-price">£{{ $menu->menu_price }}</p>
+                <div class="crud-button">
+                    <form action="admin/edit/{{ $menu->id }}">
+                        <button class="card-button">Edit</button>
+                    </form>
+                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="card-button">Delete</button>
+                    </form>
                 </div>
-            @endforeach 
+            </div>
+        </div> --}}
+        <div class="menu-container card-menu">
+            <div class="card-container">
+                    @foreach ($menus as $menu)
+                    <a href="#!" class="card">
+                        <img class="front" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
+                        <div class="back">
+                            <div>
+                                <p class="card-category">{{ $menu->menu_category }}</p>
+                            <h5 class="card-title">{{ $menu->menu_name }}</h5>
+                            <p class="card-desc">{{ $menu->menu_desc }}</p>
+                            <p class="card-price">£{{ $menu->menu_price }}</p>
+                            <div class="crud-button">
+                                <form action="admin/edit/{{ $menu->id }}">
+                                    <button class="card-button">Edit</button>
+                                </form>
+                                <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="card-button">Delete</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
+                    @endforeach 
+                </div>
         </div>
 
         <form action="admin/add" method="POST" enctype="multipart/form-data">
