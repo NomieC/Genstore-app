@@ -50,6 +50,7 @@
                 text-decoration: none;
                 padding: 14px 16px;
                 font-size: 17px;
+                justify-content: space-between;
             }
 
             button{
@@ -65,16 +66,24 @@
             }
 
             @media screen and (max-width: 800px) {
-                .topnav #navBars {
+                #navBars {
                     display: none;
-                }
-                .topnav {
-                    overflow: hidden;
-                    background-color: #927c55;
-                    position: relative;
-                    display: block;
                     text-align: center;
                 }
+                .topnav {
+                    display: grid;
+                    grid-template-columna: repeat(3, 1fr);
+                }
+
+                button {
+                    display: none;
+                    align-items: center;
+                    margin: auto;
+                }
+                #bookNowButton{
+                    margin-bottom: 15px;
+                }
+
             }
 
             @media screen and (min-width: 801px) {
@@ -85,6 +94,10 @@
                 .topnav a.icon {
                     display: none;
                 }
+                button{
+                    display: flex !important;
+                }
+                
             }
         </style>
 
@@ -92,22 +105,22 @@
     <body class="antialiased">
         <div class="topnav">
             <a href="#" class="active">Logo</a>
-            <div id="navBars">
-                <a href="#">Hours & Location</a>
-                <a href="#">About Maison</a>
-                <a href="#">Menus</a>
-                <a href="#">Dining</a>
-                <a href="#">Grill</a>
-                <a href="#">Afternoon Tea</a>
-                <a href="#">Wine</a>
-                <a href="#">Events</a>
-                <a href="#">Contact</a>
-                <a href="#">Press</a>     
-            </div>
+                <div id="navBars">
+                    <a href="#">Hours & Location</a>
+                    <a href="#">About Maison</a>
+                    <a href="#">Menus</a>
+                    <a href="#">Dining</a>
+                    <a href="#">Grill</a>
+                    <a href="#">Afternoon Tea</a>
+                    <a href="#">Wine</a>
+                    <a href="#">Events</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Press</a>     
+                </div>
+                <button id="bookNowButton"><a href="#">Book Now</a></button>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
-            <button><a href="#">Book Now</a></button>
         </div>
 
         <script>
@@ -115,8 +128,10 @@
                 var x = document.getElementById("navBars");
                 if (x.style.display === "block") {
                     x.style.display = "none";
+                    document.getElementById("bookNowButton").style.display = "none";
                 } else {
                     x.style.display = "block";
+                    document.getElementById("bookNowButton").style.display = "block";
                 }
             }
         </script>
