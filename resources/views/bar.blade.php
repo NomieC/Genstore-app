@@ -8,9 +8,12 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            body {
+            @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap'); 
+            body, html {
+                margin: 0;
                 background-color: white;
-                color: black;      
+                color: black;    
+                font-family: "cormorant", sans-serif;
             }
 
             .title {
@@ -20,6 +23,12 @@
 
             .title h1{
                 margin-bottom: 40px;
+                font-size: 50px;
+            }
+
+            .title p{
+
+                font-size: 20px;
             }
 
             .barCard{
@@ -28,6 +37,13 @@
                 align-items: center;
                 justify-content: space-between;
                 margin-top:30px;
+            }
+
+            .barCard h3{
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                padding: 8px 0 8px;
+                margin: 20px 100px 0;
             }
 
             img {
@@ -51,12 +67,16 @@
                 margin: auto;
                 text-align:center;
                 cursor: pointer; 
-                border: 1px solid white; 
+                border-top: 1px solid white; 
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 1px solid white; 
                 background-color: transparent; 
                 height: 36px; 
                 width: 70px; 
                 font-size: 18px;
                 margin-top: 60px;
+                margin-bottom: 40px;
             }
 
             .menuButton a{
@@ -64,6 +84,7 @@
                 text-align:center;
                 text-decoration:none;
                 margin:auto;
+                font-family: "cormorant", sans-serif;
             }
 
             .topnav {
