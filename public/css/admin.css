@@ -13,10 +13,12 @@
 	margin: 0 auto;
 	max-width: 1000px;
 	margin-bottom: 2rem;
+	text-align: center;
 }
 
 .filter-list li {
 	display: inline-block;
+	
 }
 
 .filter-list a {

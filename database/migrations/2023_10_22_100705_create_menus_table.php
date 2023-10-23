@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('menu_name');
+            $table->string('menu_name')->unique();
             $table->integer('menu_price');
             $table->string('menu_type');
             $table->string('menu_category');
-            $table->string('menu_desc');
-            $table->string('menu_image');
+            $table->string('menu_desc', 1000)->nullable();
+            $table->string('menu_image')->nullable();
         });
     }
 
