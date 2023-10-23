@@ -21,9 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');//->middleware(['auth', 'verified']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,6 +48,13 @@ Route::put('/admin/update/{id}', [MenuController::class, 'update'])->name('menu.
 Route::delete('/admin/delete/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
 
+Route::post('/cart/add/{id}', [CartController::class, 'addItem'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+
+
+
+Route::get('/dashboard', [CartController::class, 'dashboard'])->name('dashboard');
 
 
 require __DIR__.'/auth.php';
