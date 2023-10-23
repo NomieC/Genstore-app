@@ -8,6 +8,64 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
+            body {
+                background-color: white;
+                color: black;      
+            }
+
+            .title {
+                text-align: center;
+                margin: 100px;
+            }
+
+            .title h1{
+                margin-bottom: 40px;
+            }
+
+            .barCard{
+                background-color: black;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top:30px;
+            }
+
+            img {
+                max-width: 970px;
+                min-height:650px;
+            }
+
+            .text {
+                font-size: 20px;   
+                text-align: center;
+                color: white;
+                margin-left: 60px;
+                margin-right: 60px;
+            }
+
+            .text h3{
+                margin-bottom: 60px;
+            }
+
+            .menuButton {
+                margin: auto;
+                text-align:center;
+                cursor: pointer; 
+                border: 1px solid white; 
+                background-color: transparent; 
+                height: 36px; 
+                width: 70px; 
+                font-size: 18px;
+                margin-top: 60px;
+            }
+
+            .menuButton a{
+                color: white; 
+                text-align:center;
+                text-decoration:none;
+                margin:auto;
+            }
+
             .topnav {
                 overflow: hidden;
                 background-color: #927c55;
@@ -53,14 +111,14 @@
                 justify-content: space-between;
             }
 
-            button{
+            #bookNowButton{
                 background-color: black;
                 border: none;   
                 padding: 5px 16px ;
                 margin: 10px 16px;             
             }
 
-            button a{
+            #bookNowButton a{
                 color: white;
                 text-decoration: none;
             }
@@ -76,12 +134,20 @@
                 }
 
                 button {
+                    
+                }
+                #bookNowButton{
+                    margin-bottom: 15px;
                     display: none;
                     align-items: center;
                     margin: auto;
                 }
-                #bookNowButton{
-                    margin-bottom: 15px;
+                .barCard {
+                    flex-direction: column-reverse;
+                }
+
+                .text {
+                    margin: 20px;
                 }
 
             }
@@ -99,28 +165,52 @@
                 }
                 
             }
+
+            
         </style>
 
     </head>
     <body class="antialiased">
         <div class="topnav">
             <a href="#" class="active">Logo</a>
-                <div id="navBars">
-                    <a href="#">Hours & Location</a>
-                    <a href="#">About Maison</a>
-                    <a href="#">Menus</a>
-                    <a href="#">Dining</a>
-                    <a href="#">Grill</a>
-                    <a href="#">Afternoon Tea</a>
-                    <a href="#">Wine</a>
-                    <a href="#">Events</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Press</a>     
-                </div>
-                <button id="bookNowButton"><a href="#">Book Now</a></button>
+            <div id="navBars">
+                <a href="#">Hours & Location</a>
+                <a href="#">About Maison</a>
+                <a href="#">Menus</a>
+                <a href="#">Dining</a>
+                <a href="#">Grill</a>
+                <a href="#">Afternoon Tea</a>
+                <a href="#">Wine</a>
+                <a href="#">Events</a>
+                <a href="#">Contact</a>
+                <a href="#">Press</a>     
+            </div>
+            <button id="bookNowButton"><a href="#">Book Now</a></button>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i id="iconBars" class="fa fa-bars"></i>
             </a>
+        </div>
+        <div>
+            <div class="title">
+                <div>Logo</div>
+                <h1>Gentlemen's Bar<br>at Maison</h1>
+                <p>Maison Bar is a sophisticated and stylish destination that offers a vibrant and inviting atmosphere for guests to enjoy 
+                    <br>handcrafted cocktails and an extensive selection of premium spirits. With a focus on mixology finesse, the bar 
+                    <br>presents a diverse array of innovative concoctions and classic favorites, expertly crafted by skilled bartenders. Guests can 
+                    <br>relish in the cozy and contemporary ambiance, making Maison Bar the perfect spot for social gatherings, intimate conversations, 
+                    <br>and unwinding after a long day, all while experiencing the epitome of British hospitality and elegance.</p>
+            </div>
+            <div class="barCard">
+                <div class="text">
+                    <h3>Maison's Vintage Collection</h3>
+                    <p>Indulge in Maison's Vintage collection, a meticulously curated wine list boasting a selection of prestigious 
+                        <br>international vintages and exclusive imports, offering a diverse and luxurious tasting experience overseen by our esteemed sommelier.</p>
+                    <button class="menuButton"><a href="#">MENU</a></button>
+                </div>
+                <div class="image">
+                    <img src="https://ritzparis.twic.pics/prod/ritz-bar-jerome-galland-1.jpg?twic=v1/cover=2850x1247/quality=85">
+                </div>
+            </div>
         </div>
 
         <script>

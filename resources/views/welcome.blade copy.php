@@ -241,3 +241,20 @@
 
     </body>
 </html>
+
+
+.slide .content .city-info {
+            position: absolute;
+            bottom: 100px;
+            right: 100px;
+            padding: 10px;
+            font-size: 1.25em;
+            transition: all 1s;
+            transition-delay: 2s;
+        }
+
+        .slide .content .city-info a {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+        }
