@@ -20,7 +20,9 @@
             <a href="/#about-us">About Maison</a>
             <a href="/hours-location">Hours & Location</a>
             <div class="dropdown">
-                <button class="dropbtn">Menus</button>
+                <form action="admin">
+                    <button class="dropbtn">Menus</button>
+                </form>
                 <div class="dropdown-content">
                     <a href="">Dining</a>
                     <a href="">Grill</a>

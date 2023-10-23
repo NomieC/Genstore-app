@@ -167,6 +167,53 @@
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo aliquam natus minus molestias? Adipisci labore, sunt libero quam sequi temporibus quaerat. Rem, quo quis dolorem et modi atque deserunt hic!
             </div>
         </div>
+        
+        <div id="course-container">
+            <div class="slide anim-in">
+                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/venice.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1 class="title" data-title="Venice">Dining Room</h1>
+                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/italian-emblem.svg');"></div>
+                    <button class="city-info"><a href="/admin">MENU</a>
+                    </button>
+                </div>
+                <div class="btn-close"></div>
+            </div>
+            <div class="slide anim-in">
+                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/paris.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1 class="title" data-title="Paris">Grill</h1>
+                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/french-emblem.svg');"></div>
+                    <button class="city-info"><a href="/admin">MENU</a>
+                    </button>
+                </div>
+                <div class="btn-close"></div>
+            </div>
+            <div class="slide anim-in">
+                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/salzburg.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1 class="title" data-title="Salzburg">Afternoon Tea</h1>
+                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/austrian-emblem.svg');"></div>
+                    <button class="city-info"><a href="/admin">MENU</a>
+                    </button>
+                </div>
+                <div class="btn-close"></div>
+            </div>
+            <div class="slide anim-in">
+                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/prague.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1 class="title" data-title="Prague">Bar</h1>
+                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/czech-emblem.svg');"></div>
+                    <button class="city-info"><a href="/admin">MENU</a>
+                    </button>
+                </div>
+                <div class="btn-close"></div>
+            </div>
+        </div>
     </section>
 
     <header class="parallax-outro" data-parallax="scroll">
@@ -276,8 +323,36 @@
             });
         });
 
-        
+        // Our courses
+        (function(window, document, $, undefined) {
+            var $slides, $btnArr;
 
+            function onClick(e) {
+                var $target = $(e.target);
+                var $parentSlide = $target.closest('.slide');
+                if ($parentSlide.hasClass('active') || $parentSlide.hasClass('last-viewed')) {
+                    return;
+                }
+
+                $parentSlide.removeClass('anim-in last-viewed').addClass('active');
+                $parentSlide.siblings().removeClass('anim-in last-viewed').addClass('anim-out');
+                $parentSlide.find('.city-info a').css('pointer-events', 'auto');
+            }
+
+            function closeSlide(e) {
+                var $slide = $(e.target).parent();
+                $slide.removeClass('active anim-in').addClass('last-viewed');
+                $slide.siblings().removeClass('anim-out').addClass('anim-in');
+                $slide.find('.city-info a').css('pointer-events', 'none');
+            }
+
+            $(function() {
+                $slides = $('.slide');
+                $btnArr = $slides.find('.btn-close');
+                $slides.on('click', onClick);
+                $btnArr.on('click', closeSlide);
+            });
+        })(this, document, jQuery);
 </script>
 </html>
 

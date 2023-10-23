@@ -18,21 +18,21 @@
 
 .filter-list li {
 	display: inline-block;
-	
+	margin: 18px 13px;
 }
 
 .filter-list a {
 	font-size: 20px;
-	border-left: 1px solid white;
-	border-right: 1px solid white;
-	padding: 0 10px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	padding: 7px 10px;
 }
 
 .filter-list li:hover .filter-button {
 	color: #d5883a;
     box-shadow: 0 2px 0 0 currentcolor;
-	border-left: 1px solid #d5883a;
-	border-right: 1px solid #d5883a;
+	border-top: 1px solid #d5883a;
+	border-bottom: 1px solid #d5883a;
 }
 
 /* ============================================================ */
