@@ -11,21 +11,20 @@ class MenuController extends Controller
 {
     public function index(Request $request)
     {
+        $category = $request->input('category'); 
+        $type = $request->input('type');
+        if ($category) {
+                
+            $menus = Menu::where('menu_category', $category)->get();
+        } else if ($type){
+            $menus = Menu::where('menu_type', $type)->get();
+        } else {
+            
+            $menus = Menu::all();
+        }
+
         if (Auth::check() && Auth::user()->role === 'admin') {
-            $category = $request->input('category'); 
-            $type = $request->input('type'); 
-
-            if ($category) {
-                
-                $menus = Menu::where('menu_category', $category)->get();
-            } else if ($type){
-                $menus = Menu::where('menu_type', $type)->get();
-            } else {
-                
-                $menus = Menu::all();
-            }
             return view('admin/menu', compact('menus'));
-
         } else {
             
             return redirect()->route('home');
@@ -127,6 +126,11 @@ class MenuController extends Controller
         $menu->delete();
 
         return redirect('/admin')->with('success', 'Menu item deleted successfully!');
+
+        
     }
+
+
+    
 }
 

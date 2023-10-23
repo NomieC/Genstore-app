@@ -26,7 +26,7 @@
         <div class="content ">
             <header class="header">
                 <div class="layer-title">
-                    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 " style="margin-top: 30px; margin-bottom: 30px">
+                    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 " >
                         <div class="subtitle">
                             Welcome to
                         </div>

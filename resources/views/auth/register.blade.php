@@ -66,7 +66,7 @@
             
             <div class="flex space-x-4"> <!-- Create a flex container to hold the "Already registered?" link and the "Register" button -->
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 flex items-center text-black" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Login?') }}
                 </a>
                 
                 <x-primary-button class="ml-4">
