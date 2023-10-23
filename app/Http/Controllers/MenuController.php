@@ -29,45 +29,9 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('edit', compact('menu'));
+        return view('edit');
     }
-
-    // Update the menu item with edited data
-    // public function update(Request $request, $id)
-    // {
-    //     $menu = Menu::findOrFail($id);
     
-    //     // Update other fields
-    //     $menu->menu_name = $request->input('menu_name');
-    //     $menu->menu_price = $request->input('menu_price');
-    //     $menu->menu_type = $request->input('menu_type');
-    //     $menu->menu_category = $request->input('menu_category');
-    //     $menu->menu_desc = $request->input('menu_desc');
-    
-    //     // Handle menu image upload
-    //     if ($request->hasFile('menu_image')) {
-    //         // Delete the previous menu image, if it exists
-    //         // Storage::delete('public/assets/Foods' . $menu->menu_image);
-    
-    //         // // Get the original filename
-    //         // $originalFilename = $request->file('menu_image')->getClientOriginalName();
-    
-    //         // // Store the new menu image with the original filename
-    //         // $imagePath = $request->file('menu_image')->storeAs('assets/Foods/', $originalFilename);
-    //         // $menu->menu_image = $originalFilename;
-
-    //         $file = $request->file('menu_image');
-    //         $filename = $file->getClientOriginalName();
-    //         $file->storeAs('assets/Foods', $filename, 'public');
-    //         $incomingFields['menu_image'] = $filename;
-    //     }
-    
-    //     $menu->save();
-    
-    //     return redirect('/admin')->with('success', 'Menu item updated successfully!');
-
-        
-    // }
     public function update(Request $request, $id)
     {
         $menu = Menu::findOrFail($id);
@@ -78,7 +42,7 @@ class MenuController extends Controller
             'menu_type'  => 'required', 
             'menu_category'  => 'required',
             'menu_desc'  => 'required',
-            'menu_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:42048'
+            'menu_image' => 'image|mimes:jpeg,png,jpg,gif|max:42048'
         ]);
     
         $menu->update([
@@ -90,11 +54,11 @@ class MenuController extends Controller
         ]);
 
         if ($request->hasFile('menu_image')) {
+            Storage::delete('public/assets/Foods' . $menu->menu_image);
+
             $file = $request->file('menu_image');
-            // Get the original filename
             $filename = $file->getClientOriginalName();
-            // Store the file with the original filename
-            $file->storeAs('public/assets/Foods', $filename);
+            $file->storeAs('Foods', $filename, 'public');
             $menu->update([
                 'menu_image' => $filename,
             ]);
@@ -103,6 +67,37 @@ class MenuController extends Controller
         return redirect('/admin')->with('success', 'Menu item updated successfully!');
     }
 
+    public function add()
+    {
+        return view('edit');
+    }
+    
+    public function create(Request $request) {
+        $incomingFields = $request->validate([
+            'menu_name'  => 'required',
+            'menu_price'  => 'required',
+            'menu_type'  => 'required', 
+            'menu_category'  => 'required',
+            'menu_desc'  => 'required',
+            'menu_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:42048'
+        ]);
+
+        $incomingFields['menu_name'] = strip_tags($incomingFields['menu_name']);
+        $incomingFields['menu_price'] = strip_tags($incomingFields['menu_price']);
+        $incomingFields['menu_type'] = strip_tags($incomingFields['menu_type']);
+        $incomingFields['menu_category'] = strip_tags($incomingFields['menu_category']);
+        $incomingFields['menu_desc'] = strip_tags($incomingFields['menu_desc']);
+
+        if($request->hasFile('menu_image')) {
+            $file = $request->file('menu_image');
+            $filename = $file->getClientOriginalName();
+            $file->storeAs('Foods', $filename, 'public');
+            $incomingFields['menu_image'] = $filename;
+        }
+
+        Menu::create($incomingFields);
+        return redirect('/admin')->with('success','Menu item created succesfully');
+    }
 
     // Delete the menu item
     public function destroy($id)

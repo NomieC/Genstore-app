@@ -506,15 +506,14 @@ header:before {
     align-items: center;
 }
 
-.delapan {
+.parallax-delapan {
     background-image: url("../assets/grid/five.jpg");
     background-color: #f0f0f0;
-    background-position: 70%;
-    border-radius: 4px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 4px;
 }
 
 .sembilan {

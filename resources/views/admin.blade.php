@@ -46,9 +46,10 @@
                         <h5 class="card-title">{{ $menu->menu_name }}</h5>
                         <p class="card-desc">{{ $menu->menu_desc }}</p>
                         <p class="card-price">£{{ $menu->menu_price }}</p>
-                        <p class="card-image">£{{ $menu->menu_image }}</p>
                         <div class="crud-button">
-                            <a href="{{ route('menu.edit', $menu->id) }}" class="card-button edit-button" style="border: 2px solid black">Edit</a>
+                            <form action="admin/edit/{{ $menu->id }}">
+                                <button class="card-button">Edit</button>
+                            </form>
                             <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -59,6 +60,11 @@
                 </div>
             @endforeach 
         </div>
+
+        <form action="admin/add" method="POST" enctype="multipart/form-data">
+            @csrf
+            <button type="submit" class="add-button">Add</button>
+        </form>
             
     </section>   
     
