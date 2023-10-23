@@ -64,10 +64,10 @@
                         <div class="back">
                             <div>
                                 <p class="card-category">{{ $menu->menu_category }}</p>
-                            <h5 class="card-title">{{ $menu->menu_name }}</h5>
-                            <p class="card-desc">{{ $menu->menu_desc }}</p>
-                            <p class="card-price">£{{ $menu->menu_price }}</p>
-                            <div class="crud-button">
+                                <h5 class="card-title">{{ $menu->menu_name }}</h5>
+                                <p class="card-desc">{{ $menu->menu_desc }}</p>
+                                <p class="card-price">£{{ $menu->menu_price }}</p>
+                                <div class="crud-button">
                                 <form action="admin/edit/{{ $menu->id }}">
                                     <button class="card-button">Edit</button>
                                 </form>
