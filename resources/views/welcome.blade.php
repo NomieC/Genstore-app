@@ -173,7 +173,7 @@
                 <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/venice.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Venice">Dining Room</h1>
+                    <h1 class="title" data-title="Dining Room">Dining Room</h1>
                     <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/italian-emblem.svg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
@@ -184,7 +184,7 @@
                 <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/paris.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Paris">Grill</h1>
+                    <h1 class="title" data-title="Grill">Grill</h1>
                     <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/french-emblem.svg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
@@ -195,7 +195,7 @@
                 <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/salzburg.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Salzburg">Afternoon Tea</h1>
+                    <h1 class="title" data-title="Afternoon Tea">Afternoon Tea</h1>
                     <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/austrian-emblem.svg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
@@ -206,7 +206,7 @@
                 <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/prague.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Prague">Bar</h1>
+                    <h1 class="title" data-title="Bar">Bar</h1>
                     <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/czech-emblem.svg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
