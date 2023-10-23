@@ -31,14 +31,14 @@
         </div> --}}
     </header>
 
-    <div class="wrapper">
-        <div class="content">
-          <header class="header">
+    <div class="welcome-container">
+        <div class="welcome-content">
+          <header class="welcome-header">
             <div class="layers">
               <div class="layer-title">
-                <div class="subtitle">Welcome to</div>
-                <div class="title">Maison de l'Anglais</div>
-                <p class="article-text" style="text-align: center">
+                <div class="welcome-title">Welcome to</div>
+                <div class="welcome-subtitle">Maison de l'Anglais</div>
+                <p class="welcome-text">
                     In the heart of Maison de l'Anglais lies a tale of dedication and creativity. We believe in the power of delightful dining experiences, where each ingredient is carefully chosen, and every recipe is an expression of our culinary expertise. With a touch of innovation and a commitment to quality, we bring you dishes that not only please the palate but also warm the soul.
                   </p>
               </div>
@@ -94,7 +94,7 @@
 
     {{-- grid section --}}
     <section id="about-us" class="grid-section">
-        <div class="grid-container">
+        <div class="grid-container" style="margin-bottom: 300px">
             <div class="satu"></div>
             <div class="dua">
                 <div class="grid-text-container">
@@ -143,7 +143,7 @@
 
     {{-- About --}}
     <section>
-        <div class="about-container">
+        {{-- <div class="about-container">
             <h1 style="text-align: center; margin-bottom: 80px">Our Courses</h1>
             <div class="image-gallery">
                 <div class="image-box">
@@ -166,48 +166,49 @@
             <div class="about-info">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo aliquam natus minus molestias? Adipisci labore, sunt libero quam sequi temporibus quaerat. Rem, quo quis dolorem et modi atque deserunt hic!
             </div>
-        </div>
+        </div> --}}
         
+        <h1 style="text-align: center; margin-bottom: 80px">Our Courses</h1>
         <div id="course-container">
             <div class="slide anim-in">
-                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/venice.jpg');"></div>
+                <div class="image" style="background-image: url('assets/Diningroom.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Venice">Dining Room</h1>
-                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/italian-emblem.svg');"></div>
+                    <h1 class="title" data-title="Dining Room">Dining Room</h1>
+                    <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
             </div>
             <div class="slide anim-in">
-                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/paris.jpg');"></div>
+                <div class="image" style="background-image: url('assets/Grill.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Paris">Grill</h1>
-                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/french-emblem.svg');"></div>
+                    <h1 class="title" data-title="Grill">Grill</h1>
+                    <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
             </div>
             <div class="slide anim-in">
-                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/salzburg.jpg');"></div>
+                <div class="image" style="background-image: url('assets/Afternoontea.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Salzburg">Afternoon Tea</h1>
-                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/austrian-emblem.svg');"></div>
+                    <h1 class="title" data-title="Afternoon Tea">Afternoon Tea</h1>
+                    <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
             </div>
             <div class="slide anim-in">
-                <div class="image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/prague.jpg');"></div>
+                <div class="image" style="background-image: url('assets/Bar.jpg');"></div>
                 <div class="overlay"></div>
                 <div class="content">
-                    <h1 class="title" data-title="Prague">Bar</h1>
-                    <div class="emblem" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/czech-emblem.svg');"></div>
+                    <h1 class="title" data-title="Bar">Bar</h1>
+                    <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
                     <button class="city-info"><a href="/admin">MENU</a>
                     </button>
                 </div>
