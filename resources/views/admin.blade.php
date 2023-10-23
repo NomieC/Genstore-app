@@ -19,7 +19,21 @@
 </head>
 <body>
     @include('navbar')
+    <section id="menu-header">
+        <div class="menu-header-container">
+            <div class="menu-slider-container">
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+            </div>
+          </div>
+    </section>
+
+    {{-- menu list section --}}
     <section id="table-menu">
+        <h1 class="filter-title">Menus</h1>
         <div class="filter-container">
             <div class="filter-list">
                 <li><a href="{{ route('admin', ['category' => '']) }}" class="filter-button">All</a></li> 
@@ -35,48 +49,27 @@
             </div>
         </div>
         
-        
-
-        {{-- <div class="card">
-            <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
-            <div class="card-body">
-                <p class="card-category">{{ $menu->menu_category }}</p>
-                <h5 class="card-title">{{ $menu->menu_name }}</h5>
-                <p class="card-desc">{{ $menu->menu_desc }}</p>
-                <p class="card-price">£{{ $menu->menu_price }}</p>
-                <div class="crud-button">
-                    <form action="admin/edit/{{ $menu->id }}">
-                        <button class="card-button">Edit</button>
-                    </form>
-                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="card-button">Delete</button>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
         <div class="menu-container card-menu">
             <div class="card-container">
                     @foreach ($menus as $menu)
                     <a href="#!" class="card">
-                        <img class="front" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
+                        <img class="front" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="{{asset("assets/defaultwine.jpg")}}">
                         <div class="back">
                             <div>
                                 <p class="card-category">{{ $menu->menu_category }}</p>
-                            <h5 class="card-title">{{ $menu->menu_name }}</h5>
-                            <p class="card-desc">{{ $menu->menu_desc }}</p>
-                            <p class="card-price">£{{ $menu->menu_price }}</p>
-                            <div class="crud-button">
-                                <form action="admin/edit/{{ $menu->id }}">
-                                    <button class="card-button">Edit</button>
-                                </form>
-                                <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="card-button">Delete</button>
-                                </form>
-                            </div>
+                                <h5 class="card-title">{{ $menu->menu_name }}</h5>
+                                <p class="card-desc">{{ $menu->menu_desc }}</p>
+                                <p class="card-price">£{{ $menu->menu_price }}</p>
+                                <div class="crud-button">
+                                    <form action="admin/edit/{{ $menu->id }}">
+                                        <button class="card-button">Edit</button>
+                                    </form>
+                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="card-button">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </a>

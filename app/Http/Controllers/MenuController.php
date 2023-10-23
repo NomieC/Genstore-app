@@ -79,7 +79,7 @@ class MenuController extends Controller
             'menu_type'  => 'required', 
             'menu_category'  => 'required',
             'menu_desc'  => 'required',
-            'menu_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:42048'
+            'menu_image' => 'image|mimes:jpeg,png,jpg,gif|max:42048'
         ]);
 
         $incomingFields['menu_name'] = strip_tags($incomingFields['menu_name']);

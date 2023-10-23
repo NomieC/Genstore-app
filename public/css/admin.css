@@ -1,3 +1,85 @@
+.menu-header-container{
+	width: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.menu-slider-container{
+	position: relative;
+	width: 500%;
+	animation: animate 40s linear infinite;
+}
+
+.menu-slide{
+	position: relative;
+	width: 20%;
+	float: left;
+	height: 100vh;
+}
+
+.menu-slide{
+	background-size: cover;
+}
+
+.menu-slide:nth-child(1){
+	background: url(https://images.pexels.com/photos/316594/pexels-photo-316594.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+}
+
+.menu-slide:nth-child(2){
+	background: url(https://images.pexels.com/photos/334028/pexels-photo-334028.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+}
+
+.menu-slide:nth-child(3){
+	background: url(https://images.pexels.com/photos/586688/pexels-photo-586688.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+}
+
+.menu-slide:nth-child(4){
+	background: url(https://images.pexels.com/photos/348528/pexels-photo-348528.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+}
+
+.menu-slide:nth-child(5){
+	background: url(https://images.pexels.com/photos/309940/pexels-photo-309940.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+}
+
+@keyframes animate{
+	0%{
+	  left: 0;
+	}
+	16%{
+	  left: 0;
+	}
+	20%{
+	  left: -100%;
+	}
+	36%{
+	   left: -100%;
+	}
+	40%{
+	  left: -200%;
+	}
+	56%{
+	  left: -200%;
+	}
+	60%{
+	  left: -300%;
+	}
+	76%{
+	  left: -300%;
+	}
+	80%{
+	  left: -400%;
+	}
+	96%{
+	  left: -400%;
+	}
+	100%{
+	  left: 0;
+	}
+}
+/* ==================================================================== */
+/* ==================================================================== */
+/* ==================================================================== */
+/* menu table */
 #table-menu {
     padding-top: 200px;
 }
@@ -13,24 +95,28 @@
 	margin: 0 auto;
 	max-width: 1000px;
 	margin-bottom: 2rem;
+	text-align: center;
 }
 
 .filter-list li {
 	display: inline-block;
+	margin-top: 20px;
 }
 
 .filter-list a {
 	font-size: 20px;
-	border-left: 1px solid white;
-	border-right: 1px solid white;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
 	padding: 0 10px;
+	margin: 0 10px;
+	
 }
 
 .filter-list li:hover .filter-button {
 	color: #d5883a;
     box-shadow: 0 2px 0 0 currentcolor;
-	border-left: 1px solid #d5883a;
-	border-right: 1px solid #d5883a;
+	border-top: 1px solid #d5883a;
+	border-bottom: 1px solid #d5883a;
 }
 
 /* ============================================================ */
