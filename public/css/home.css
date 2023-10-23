@@ -168,6 +168,50 @@ header:before {
 /*========================================================================================================*/
 /*========================================================================================================*/
 /*========================================================================================================*/
+/* welcome section*/
+.welcome-container {
+    max-width: 900px;
+    margin: auto;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+@keyframes firefly-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 100, 0.4), 0 0 10px rgba(255, 255, 100, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 100, 0.4), 0 0 15px rgba(255, 255, 100, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 100, 0.4), 0 0 10px rgba(255, 255, 100, 0.8);
+    }
+}
+
+.welcome-title,
+.welcome-subtitle,
+.welcome-text {
+    animation: firefly-glow 3s infinite;
+}
+
+.welcome-title {
+    font-size: 36px;
+}
+
+.welcome-subtitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.welcome-text {
+    text-transform: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/*========================================================================================================*/
+/*========================================================================================================*/
+/*========================================================================================================*/
 /* intro section */
 .parallax-intro {
     background-image: url('../assets/intro.jpg');
@@ -761,76 +805,10 @@ footer i {
     letter-spacing: calc(var(--index) / 37.5);
 }
 
-/*===============================================================*/
-/*===============================================================*/
-/*===============================================================*/
-.parallax-outro {
-    margin-top: 250px;
-    background-image: url('../assets/outro.jpg');
-    min-height: 800px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.outro-container {
-    margin: auto;
-    justify-content: center;
-}
-
-.outro-text {
-    width: 600px;
-    margin: auto auto;
-    font-size: 2rem;
-    position: relative;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.outro-quote {
-    font-weight: 200;
-    font-size: 20px;
-    text-align: center;
-}
-
-.outro-button-box {
-    margin: auto;
-    margin-top: 100px;
-    justify-content: center;
-    text-align: center;
-}
-
-.outro-button {
-    color: white;
-    background-color: black;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.6s, color 0.6s;
-    font-size: 20px;
-    z-index: 1000;
-}
-
-.outro-button:hover {
-    background-color: white;
-    color: black;
-}
-
-
-
-
-
-
 /* =============================================== */
 /* =============================================== */
 /* =============================================== */
 /* our courses section */
-/* {{-- container -> course-container
-    image -> course-image
-    title -> course-title
-    emblem ->
-    --}} */
 #course-container {
     position: relative;
     display: flex;
@@ -840,6 +818,7 @@ footer i {
     height: 80vh;
 }
 
+
 .slide {
     position: relative;
     flex: 1;
@@ -848,6 +827,7 @@ footer i {
     cursor: pointer;
     transition: all 1.0s;
 }
+
 
 .slide.last-viewed .btn-close:after {
     transition-delay: 0s;
@@ -1053,7 +1033,7 @@ footer i {
 
 .slide .content .emblem {
     position: absolute;
-    height: 200px;
+    height: 300px;
     width: 25%;
     opacity: 0;
     transform: translateY(120px);
@@ -1130,26 +1110,6 @@ footer i {
     opacity: 0.6;
 }
 
-#codepen-link {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    height: 40px;
-    width: 40px;
-    z-index: 10;
-    border-radius: 50%;
-    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/logo.jpg");
-    background-position: center center;
-    background-size: cover;
-    opacity: 0.7;
-    transition: all 0.25s;
-}
-
-#codepen-link:hover {
-    opacity: 1;
-    box-shadow: 0 2px 6px #0f0f0f;
-}
-
 @keyframes img-anim-in {
     to {
         top: 0;
@@ -1164,3 +1124,66 @@ footer i {
         left: -100%;
     }
 }
+
+
+/*===============================================================*/
+/*===============================================================*/
+/*===============================================================*/
+.parallax-outro {
+    margin-top: 250px;
+    background-image: url('../assets/outro.jpg');
+    min-height: 800px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.outro-container {
+    margin: auto;
+    justify-content: center;
+}
+
+.outro-text {
+    max-width: 600px;
+    margin: auto auto;
+    font-size: 2rem;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.outro-quote {
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+}
+
+.outro-button-box {
+    margin: auto;
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+}
+
+.outro-button {
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.6s, color 0.6s;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.outro-button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+
