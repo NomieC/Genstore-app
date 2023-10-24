@@ -168,7 +168,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
         Mews\Captcha\CaptchaServiceProvider::class,
+=======
+        Darryldecode\Cart\CartServiceProvider::class,
+>>>>>>> 208d49ae07f00609959f2a3b93be9658fc27dae5
     ])->toArray(),
 
     /*
@@ -184,7 +188,11 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+<<<<<<< HEAD
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+=======
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+>>>>>>> 208d49ae07f00609959f2a3b93be9658fc27dae5
     ])->toArray(),
 
 ];
