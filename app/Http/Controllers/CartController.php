@@ -72,5 +72,8 @@ class CartController extends Controller
         $menus = Menu::all(); 
         return view('dashboard', ['menus' => $menus]);
     }
+
+
+    
 }
 

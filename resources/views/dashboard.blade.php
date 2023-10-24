@@ -46,16 +46,14 @@
                                 <h5 class="card-title">{{ $menu->menu_name }}</h5>
                                 <p class="card-desc">{{ $menu->menu_desc }}</p>
                                 <p class="card-price">£{{ $menu->menu_price }}</p>
-                                <div class="crud-button">
+                                <div class="cart-button-box">
                                 
                                     <form action="{{ route('cart.add', ['id' => $menu->id]) }}" method="POST">
                                         @csrf
-                                        <button class="card-button" type="submit">Add to Cart</button>
+                                        <button class="cart-button" type="submit">Add to Cart</button>
                                     </form>
-                                    
                                 
-                                
-                                    <button class="card-button">Remove From Cart</button>
+                                    <button class="cart-button">Remove From Cart</button>
                                 
                             </div>
                             </div>

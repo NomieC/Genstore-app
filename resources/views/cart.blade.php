@@ -8,7 +8,8 @@
 
     {{-- style --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
+    {{-- <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" > --}}
+    <link href="{{ asset('css/cart.css') }}" rel="stylesheet" type="text/css" >
 
     {{-- script --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -19,18 +20,33 @@
 </head>
 <body>
     @include('navbar')
-    <section id="table-menu">
-        <div class="menu-container card-menu">
-            <div class="card-container">
+    <section id="cart-table">
+        <div class="cart-menu-container">
+            <div class="cart-container">
                 @foreach ($cartItems as $item)
-                    <div class="cart-item">
-                        <h3>{{ $item['name'] }}</h3>
-                        <p>Price: £{{ $item['price'] }}</p>
-                        <p>Type: {{ $item['type'] }}</p>
-                        <p>Category: {{ $item['category'] }}</p>
-                        <p>Description: {{ $item['description'] }}</p>
-                        <img src="{{ asset('assets/Foods/' . $item['image']) }}" alt="{{ $item['name'] }}">
+                <div class="cart-item">
+                    <div class="collapsible">
+                        <div class="name-row">
+                            <h3>{{ $item['name'] }}</h3>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus">-</button>
+                                <span class="quantity" style="font-size: 22px">1</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="price-row">
+                            <p class="cart-price">£{{ $item['price'] }}</p>
+                            <hr>
+                        </div>
                     </div>
+                    <div class="collapsible-content">
+                        <p>{{ $item['type'] }}</p>
+                        <p>{{ $item['category'] }}</p>
+                        <p>{{ $item['description'] }}</p>
+                        {{-- <img src="{{ asset('assets/Foods/' . $item['image']) }}" alt="{{ $item['name'] }}"> --}}
+                    </div>
+                </div>
+                
                 @endforeach
 
 
@@ -44,5 +60,14 @@
             
     </section>   
     
+    <script>
+        $(document).ready(function() {
+            $('.price-row').click(function() {
+                $(this).closest('.cart-item').toggleClass('active');
+                $(this).closest('.cart-item').find('.collapsible-content').slideToggle();
+            });
+        });
+
+    </script>
 </body>
 </html>

@@ -55,4 +55,10 @@ Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clea
 
 Route::get('/dashboard', [CartController::class, 'usersort'])->name('user.sort');
 
+
+// Route::post('/cart/add/{id}', 'CartController@addToCart')->name('cart.add');
+Route::post('/cart/remove/{id}', 'CartController@removeFromCart')->name('cart.remove');
+Route::post('/cart/clear', 'CartController@clearCart')->name('cart.clear');
+
+
 require __DIR__.'/auth.php';
