@@ -5,7 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::get('hnl', function () {
+    return view('hnl');
 })->name('home');
 
 Route::get('/dashboard', function () {
@@ -49,7 +53,7 @@ Route::get('/admin/edit/{id}', [MenuController::class, 'edit'])->name('menu.edit
 Route::put('/admin/update/{id}', [MenuController::class, 'update'])->name('menu.update');
 Route::delete('/admin/delete/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
-
+Route::get('/reload-captcha', [AuthenticatedSessionController::class, 'reloadCaptcha']);
 
 
 require __DIR__.'/auth.php';

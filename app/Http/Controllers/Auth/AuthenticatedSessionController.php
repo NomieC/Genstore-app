@@ -35,6 +35,12 @@ class AuthenticatedSessionController extends Controller
         return redirect($intendedUrl ?: RouteServiceProvider::HOME);
     }
 
+
+    public function reloadCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
+    }
+
     /**
      * Destroy an authenticated session.
      */

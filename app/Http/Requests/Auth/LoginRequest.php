@@ -29,9 +29,11 @@ class LoginRequest extends FormRequest
         return [
             'credential' => ['required', 'string'], // Use a new field named 'credential'
             'password' => ['required', 'string'],
+            'captcha' => ['required','captcha'],
         ];
     }
 
+    
 
     /**
      * Attempt to authenticate the request's credentials.
