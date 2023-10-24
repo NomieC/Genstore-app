@@ -176,7 +176,7 @@
                 <div class="content">
                     <h1 class="title" data-title="Dining Room">Dining Room</h1>
                     <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
-                    <button class="city-info"><a href="/admin">MENU</a>
+                    <button class="city-info"><a href="/dining">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
@@ -187,7 +187,7 @@
                 <div class="content">
                     <h1 class="title" data-title="Grill">Grill</h1>
                     <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
-                    <button class="city-info"><a href="/admin">MENU</a>
+                    <button class="city-info"><a href="/grill">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
@@ -198,7 +198,7 @@
                 <div class="content">
                     <h1 class="title" data-title="Afternoon Tea">Afternoon Tea</h1>
                     <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
-                    <button class="city-info"><a href="/admin">MENU</a>
+                    <button class="city-info"><a href="/tea">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
@@ -209,7 +209,7 @@
                 <div class="content">
                     <h1 class="title" data-title="Bar">Bar</h1>
                     <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
-                    <button class="city-info"><a href="/admin">MENU</a>
+                    <button class="city-info"><a href="/bar">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>

@@ -38,13 +38,6 @@
                 margin-top:30px;
             }
 
-            /* .sundayCard h3{
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                padding: 8px 0 8px;
-                margin: 0 100px 0;
-            } */
-
             .christmasCard{
                 background-color: black;
                 display: flex;
@@ -52,12 +45,6 @@
                 justify-content: space-between;
             }
 
-            /* .christmasCard h3{
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                padding: 8px 0 8px;
-                margin: 0 100px 0;
-            } */
 
             .christmasCard .text {
                 flex-basis: 50%;
@@ -74,12 +61,6 @@
                 justify-content: space-between;
             }
 
-            /* .valentineCard h3{
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                padding: 8px 0 8px;
-                margin: 0 100px 0;
-            } */
 
             .sundayCard img, .christmasCard img, .valentine img {
                 max-width: 970px;
@@ -116,8 +97,7 @@
                 height: 36px; 
                 width: 70px; 
                 font-size: 18px;
-                margin-top: 60px;
-                margin-bottom: 40px;
+                margin-top: 60px auto 40px;
             }
 
             .menuButton a{
@@ -163,7 +143,7 @@
                     <div class="text">
                         <h3>Sunday Lunch</h3>
                         <p>Maison's Sunday Lunch features a sumptuous spread of classic British dishes made from seasonal, locally sourced ingredients. Guests can relish succulent roasts, flavorful gravies, fresh vegetables, and Yorkshire puddings in a warm and inviting atmosphere, perfect for enjoying time with loved ones.</p>
-                        <button class="menuButton"><a href="#">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                     </div>
                     <div class="image">
                         <img src="https://www.hawksmoornyc.com/wp-content/uploads/Hawksmoor-NYC-Roast-Spread-3-scaled.jpg">
@@ -176,14 +156,14 @@
                     <div class="text">
                         <h3>Christmas Dinner</h3>
                         <p>Maison's Christmas Dinner offers a lavish feast of traditional British favorites, expertly prepared with the finest seasonal ingredients sourced locally. Guests can enjoy the rich flavors and heartwarming dishes in an elegant and festive ambiance, perfect for creating cherished holiday memories with friends and family.</p>
-                        <button class="menuButton"><a href="#">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                     </div>
                 </div>
                 <div class="valentineCard">
                     <div class="text">
                         <h3>Valentine's Day</h3>
                         <p>Maison's Valentine's Day celebration offers a romantic dining experience accentuated by a curated menu of exquisite dishes designed to ignite the senses and evoke the spirit of love. With impeccable service and a charming ambiance, couples can revel in an enchanting evening, creating cherished memories in the company of affection and romance.</p>
-                        <button class="menuButton"><a href="#">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                     </div>
                     <div class="image">
                         <img src="https://diningandnightlife.com/wp-content/uploads/2022/02/Ristorante-Valentines-2-1000x600.jpg">

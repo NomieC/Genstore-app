@@ -119,7 +119,7 @@
                     <p>Celebrating the essence of British's wild game, Maison Grill 
                         <br>artfully presents a selection of premium cuts expertly sourced from 
                         <br>local hunters and sustainable producers, delivering a rich and flavorsome dining experience.</p>
-                    <button class="menuButton"><a href="#">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                 </div>
                 <div class="image">
                     <img src="https://res.cloudinary.com/tf-lab/image/upload/w_3840,c_fill,q_auto,f_auto/restaurant/8e48df01-2364-41aa-870d-b0f5755e8916/77b7c45d-34eb-4ae9-a20c-205b1666dfe8.jpg">

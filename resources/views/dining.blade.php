@@ -124,7 +124,7 @@
                     <p>Infused with rich culinary heritage, Maison's British-inspired menu pays 
                         <br>homage to the finest local farmers and producers, presenting an array of 
                         <br>thoughtfully curated dishes that celebrate the essence of traditional British flavors.</p>
-                    <button class="menuButton"><a href="#">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                 </div>
                 <div class="image">
                     <img src="https://media.tatler.com/photos/63fca84f4b09b756109187d4/16:9/w_2580%2Cc_limit/Lanesborough_270223.jpg">

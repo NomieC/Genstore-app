@@ -117,7 +117,7 @@
                     <p>Embracing the cherished British pastime of afternoon tea, 
                         <br>Maison artfully presents an assortment of delicate pastries and sandwiches
                         <br>alongside a selection of premium teas, exuding a timeless charm and elegance.</p>
-                    <button class="menuButton"><a href="/menu">MENU</a></button>
+                        <form action="menu"><button type="submit" class="menuButton" ><a style="color: white">MENU</a></button></form>
                 </div>
                 <div class="image">
                     <img src="https://www.travoh.com/wp-content/uploads/2022/06/008-Mandarin-Oriental-Ritz-Madrid-Hotel-Madrid-Spain-Palm-Court-Restaurant.jpg">
