@@ -83,9 +83,9 @@
         <div class="nav-links" id="navLinks">
             <a href="/">Home</a>
             <a href="/#about-us">About Maison</a>
-            <a href="/hnl">Hours & Location</a>
+            <a href="hnl">Hours & Location</a>
             <div class="dropdown">
-                <form action="menu">
+                <form action="admin">
                     <button class="dropbtn">Menus</button>
                 </form>
                 <div class="dropdown-content">
@@ -97,38 +97,6 @@
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Events</button>
-<<<<<<< HEAD
-=======
-                <div class="dropdown-content">
-                    <a href="">Christmas</a>
-                    <a href="">Valentine</a>
-                    <a href="">Sunday Lunch</a>
-                </div>
-            </div>
-            <a href="/cart">Book Now</a>
-
-            <div >
-                @if (Route::has('login'))
-                <div >
-                    @auth
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); this.closest('form').submit();"
-                        class="btn-sign-up">
-                            Log Out
-                        </a>
-                    </form>
-                    @else
-                        <a href="{{ route('login') }}" class="btn-sign-up">Log in</a>
-            
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn-sign-up">Register</a>
-                        @endif
-                    @endauth
-                </div>
-                @endif
->>>>>>> 208d49ae07f00609959f2a3b93be9658fc27dae5
             </div>
         </div>
 

@@ -229,9 +229,7 @@
         </div>
     </header>
 
-    <footer>
-        ini percobaan footer
-    </footer>
+    @include('footer')
 </body>
 
 <script>
