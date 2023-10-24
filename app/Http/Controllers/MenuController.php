@@ -4,34 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
     public function index(Request $request)
     {
-        $category = $request->input('category'); // Get the category from the request
-        $type = $request->input('type'); // Get the category from the request
-
+        $category = $request->input('category'); 
+        $type = $request->input('type');
         if ($category) {
-            // If a category is selected, filter menus by category
+                
             $menus = Menu::where('menu_category', $category)->get();
         } else if ($type){
             $menus = Menu::where('menu_type', $type)->get();
         } else {
-            // If no category is selected, fetch all menus
+            
             $menus = Menu::all();
         }
 
-        return view('admin', compact('menus'));
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            return view('admin/menu', compact('menus'));
+        } else {
+            return view('dashboard', compact('menus')); 
+        }
+        
     }
+
 
     public function edit($id)
     {
-        $menu = Menu::findOrFail($id);
-        return view('edit', compact('menu'));
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            $menu = Menu::findOrFail($id);
+            return view('admin/edit', compact('menu'));
+
+        } else {
+            // You can redirect or return an error view here for non-admin users
+            return redirect()->route('home');
+        }
+        
     }
-    
+
+    // Update the menu item with edited data
     public function update(Request $request, $id)
     {
         $menu = Menu::findOrFail($id);
@@ -68,10 +82,15 @@ class MenuController extends Controller
     }
 
     public function add()
-    {
-        return view('edit');
+    {   
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            return view('admin/edit');
+        } else {
+            // You can redirect or return an error view here for non-admin users
+            return redirect()->route('home');
+        }
     }
-    
+
     public function create(Request $request) {
         $incomingFields = $request->validate([
             'menu_name'  => 'required',
@@ -96,7 +115,7 @@ class MenuController extends Controller
         }
 
         Menu::create($incomingFields);
-        return redirect('/admin')->with('success','Menu item created succesfully');
+        return redirect('/menu')->with('success','Menu item created succesfully');
     }
 
     // Delete the menu item
@@ -105,7 +124,14 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
         $menu->delete();
 
-        return redirect('/admin')->with('success', 'Menu item deleted successfully!');
+        return redirect('menu')->with('success', 'Menu item deleted successfully!');
     }
+
+    public function productList()
+    {
+        $menus = Menu::all();
+        return view('cart', compact('menus'));
+    }
+    
 }
 

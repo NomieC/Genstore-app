@@ -20,7 +20,9 @@
             <a href="/#about-us">About Maison</a>
             <a href="/hours-location">Hours & Location</a>
             <div class="dropdown">
-                <button class="dropbtn">Menus</button>
+                <form action="menu">
+                    <button class="dropbtn">Menus</button>
+                </form>
                 <div class="dropdown-content">
                     <a href="">Dining</a>
                     <a href="">Grill</a>
@@ -36,8 +38,30 @@
                     <a href="">Sunday Lunch</a>
                 </div>
             </div>
+            <a href="/cart">Book Now</a>
+
+            <div >
+                @if (Route::has('login'))
+                <div >
+                    @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); this.closest('form').submit();"
+                        class="btn-sign-up">
+                            Log Out
+                        </a>
+                    </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn-sign-up">Log in</a>
             
-            <a href="/sign-up" class="btn-sign-up">Book now</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn-sign-up">Register</a>
+                        @endif
+                    @endauth
+                </div>
+                @endif
+            </div>
         </div>
     </nav>
 

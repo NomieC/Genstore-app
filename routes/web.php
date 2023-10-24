@@ -1,7 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +19,30 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
+})->name('home');
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // Add the 'cart' route here
+
+
+    Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
-Route::get('/admin', [MenuController::class, 'index'])->name('admin');
+
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get('/menus/create', [MenuController::class, 'create']);
 Route::post('/menus', [MenuController::class, 'store']);
+
 
 Route::post('/admin/add', [MenuController::class, 'add']);
 Route::post('/admin/create', [MenuController::class, 'create']);
@@ -34,4 +51,8 @@ Route::put('/admin/update/{id}', [MenuController::class, 'update'])->name('menu.
 Route::delete('/admin/delete/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
 
+Route::post('/cart/add/{id}', [CartController::class, 'addItem'])->name('cart.add');
+Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
+
+require __DIR__.'/auth.php';
