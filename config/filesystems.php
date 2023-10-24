@@ -38,10 +38,9 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => public_path('assets'),
+            'url' => env('APP_URL').'/assets',
             'visibility' => 'public',
-            'throw' => false,
         ],
 
         's3' => [
@@ -55,7 +54,12 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-
+        'custom' => [
+            'driver' => 'local',
+            'root' => public_path('assets'),
+            'url' => env('APP_URL').'/assets',
+            'visibility' => 'public',
+        ],
     ],
 
     /*
@@ -71,6 +75,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('images') => storage_path('app/images'),
     ],
 
 ];

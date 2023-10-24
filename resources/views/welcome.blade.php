@@ -9,11 +9,12 @@
     {{-- style --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet" type="text/css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     {{-- script --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{{asset('js/home.js')}}"></script>
+
+
 </head>
 <body>
     @include('navbar')
@@ -228,50 +229,9 @@
         </div>
     </header>
 
-    @include('footer')
-    <!-- <footer>
-        <div class="row primary">
-            <div class="column-about">
-                <h3>Maison de L'Anglaise</h3>
-                <p>A culinary haven in the heart of Quebec, offering a delightful fusion of traditional British flavors with a modern twist.</p>
-                <div class="social">
-                    <img src="{{asset('assets/facebook.png')}}">
-                    <img src="{{asset('assets/twitter.png')}}" >   
-                    <img src="{{asset('assets/instagram.png')}}"> 
-                    <img src="{{asset('assets/youtube.png')}}">                      
-                </div>
-            </div>
-            <div class="column-links">
-                <h3>Discover</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Hours & Location</a></li>
-                    <li><a href="#">Menus</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-            </div>
-            <div class="column-links">
-                <h3>Cookies & <br>Policies</h3>
-                <ul>
-                    <li><a href="#faq">F.A.Q</a></li>
-                    <li><a href="#cookies-policy">Cookies Policy</a></li>
-                    <li><a href="#terms-of-services">Terms Of Service</a></li>
-                    <li><a href="#support">Support</a></li>
-                </ul>
-            </div>
-            <div class="column-subscribe">
-                <h3>Newsletter</h3>
-                <div>
-                    <input type="email" placeholder="Your email here" />
-                    <button>Subscribe</button>
-                </div>
-            </div>
-        </div>
-        <div class="row copyright">
-            <p>Copyright &copy; 2021 Maison de L'Anglais Quebecr</p>
-        </div>
-    </footer> -->
+    <footer>
+        ini percobaan footer
+    </footer>
 </body>
 
 <script>

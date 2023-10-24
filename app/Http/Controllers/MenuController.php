@@ -11,24 +11,22 @@ class MenuController extends Controller
 {
     public function index(Request $request)
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
-            $category = $request->input('category'); 
-            $type = $request->input('type'); 
-
-            if ($category) {
+        $category = $request->input('category'); 
+        $type = $request->input('type');
+        if ($category) {
                 
-                $menus = Menu::where('menu_category', $category)->get();
-            } else if ($type){
-                $menus = Menu::where('menu_type', $type)->get();
-            } else {
-                
-                $menus = Menu::all();
-            }
-            return view('admin/menu', compact('menus'));
-
+            $menus = Menu::where('menu_category', $category)->get();
+        } else if ($type){
+            $menus = Menu::where('menu_type', $type)->get();
         } else {
             
-            return redirect()->route('home');
+            $menus = Menu::all();
+        }
+
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            return view('admin/menu', compact('menus'));
+        } else {
+            return view('dashboard', compact('menus')); 
         }
         
     }
@@ -117,7 +115,7 @@ class MenuController extends Controller
         }
 
         Menu::create($incomingFields);
-        return redirect('/admin')->with('success','Menu item created succesfully');
+        return redirect('/menu')->with('success','Menu item created succesfully');
     }
 
     // Delete the menu item
@@ -126,7 +124,14 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
         $menu->delete();
 
-        return redirect('/admin')->with('success', 'Menu item deleted successfully!');
+        return redirect('menu')->with('success', 'Menu item deleted successfully!');
     }
+
+    public function productList()
+    {
+        $menus = Menu::all();
+        return view('cart', compact('menus'));
+    }
+    
 }
 

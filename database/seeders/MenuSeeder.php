@@ -179,7 +179,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Scottish duck, white wine, fennel, leeks. Succulent langoustine in flavorful broth, served with aromatic bronze fennel for a luxurious experience.',
-                'menu_image' => 'Langoustine À la Nage and Bronze Fennel.png',
+                'menu_image' => 'Langoustine A la Nage and Bronze Fennel.png',
             ],
             // Anjou Pigeon À la Presse
             [
@@ -188,7 +188,7 @@ class MenuSeeder extends Seeder
                 'menu_type' => 'Course Experience',
                 'menu_category' => 'Package',
                 'menu_desc' => 'Anjou pigeon, pomme soufflée, and baked kohlrabi. An elegant dish featuring Anjou pigeon, pomme soufflée, and baked kohlrabi, delivering a refined and flavorful dining experience.',
-                'menu_image' => 'Anjou Pigeon À la Presse.png',
+                'menu_image' => 'Anjou Pigeon A la Presse.png',
             ],
             // Grill
             // Snacks & Side Dishes
