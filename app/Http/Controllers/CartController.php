@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cart;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -32,9 +33,8 @@ class CartController extends Controller
 
         session()->push('cart', $cartItem);
 
-        return redirect()->route('user.sort')->with('success', 'Item added to the cart.');
+        return redirect()->route('menu')->with('success', 'Item added to the cart.');
     }
-
 
 
     public function viewCart()
@@ -44,18 +44,35 @@ class CartController extends Controller
         return view('cart', compact('cartItems'));
     }
 
+    // public function viewCart()
+    // {
+    //     $menus = Menu::all();
+    //     $cartMenuIds = session('cart', []) ? array_column(session('cart'), 'id') : []; // Get menu IDs from the cart items
+    //     return view('dashboard', compact('menus', 'cartMenuIds'));
+    // }    
+
     public function clearCart()
     {
         session()->forget('cart'); 
         return redirect()->route('user.sort'); 
     }
 
-    public function viewDashboard()
-    {
-        $menus = Menu::all(); 
-        return view('dashboard', ['menus' => $menus]);
+    public function removeFromCart($id)
+{
+    $cartItems = session('cart', []);
+
+    foreach ($cartItems as $key => $item) {
+        if ($item['id'] == $id) {
+            unset($cartItems[$key]); // Remove the item from the cart
+            break; // Exit the loop after removing the item
+        }
     }
 
+    // Update the session with the modified cart items
+    session(['cart' => array_values($cartItems)]);
+
+    return redirect()->route('menu')->with('success', 'Item removed from the cart.');
+}
 
     
 }

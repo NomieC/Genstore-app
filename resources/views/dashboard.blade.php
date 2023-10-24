@@ -18,20 +18,34 @@
 
 </head>
 <body>
+    <section id="menu-header">
+        <div class="menu-header-container">
+            <div class="menu-slider-title"><h1>Menus</h1></div>
+            <div class="menu-slider-container">
+              <div class="menu-slide"><img src="{{asset('assets/menu1.jpg')}}" alt=""></div>
+              <div class="menu-slide"><img src="{{asset('assets/menu2.jpg')}}" alt=""></div>
+              <div class="menu-slide"><img src="{{asset('assets/menu3.jpg')}}" alt=""></div>
+              <div class="menu-slide"><img src="{{asset('assets/menu4.jpg')}}" alt=""></div>
+              <div class="menu-slide"><img src="{{asset('assets/menu5.jpg')}}" alt=""></div>
+            </div>
+          </div>
+    </section>
+
     @include('navbar')
     <section id="table-menu">
         <div class="filter-container">
             <div class="filter-list">
-                <li><a href="{{ route('menu', ['category' => '']) }}" class="filter-button">All</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Side Dish']) }}" class="filter-button">Side Dish</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Desserts']) }}" class="filter-button">Desserts</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Snacks & Side Dishes']) }}" class="filter-button">Snacks & Side Dishes</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Starters & Small Plates']) }}" class="filter-button">Starters & Small Plates</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Salads']) }}" class="filter-button">Salads</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Mains']) }}" class="filter-button">Mains</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Grills']) }}" class="filter-button">Grills</a></li> 
-                <li><a href="{{ route('menu', ['category' => 'Package']) }}" class="filter-button">Packages</a></li> 
-                <li><a href="{{ route('menu', ['type' => 'Wine']) }}" class="filter-button">Wine</a></li> 
+                <li class="{{ request('category') ? '' : 'active' }}"><a href="{{ route('menu', ['category' => '']) }}" class="filter-button">All</a></li> 
+                <li class="{{ request('category') === 'A la carte' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'A la carte']) }}" class="filter-button">A la carte</a></li> 
+                <li class="{{ request('category') === 'Side Dish' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Side Dish']) }}" class="filter-button">Side Dish</a></li> 
+                <li class="{{ request('category') === 'Desserts' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Desserts']) }}" class="filter-button">Desserts</a></li> 
+                <li class="{{ request('category') === 'Snacks & Side Dishes' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Snacks & Side Dishes']) }}" class="filter-button">Snacks & Side Dishes</a></li> 
+                <li class="{{ request('category') === 'Starters & Small Plates' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Starters & Small Plates']) }}" class="filter-button">Starters & Small Plates</a></li> 
+                <li class="{{ request('category') === 'Salads' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Salads']) }}" class="filter-button">Salads</a></li> 
+                <li class="{{ request('category') === 'Mains' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Mains']) }}" class="filter-button">Mains</a></li> 
+                <li class="{{ request('category') === 'Grills' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Grills']) }}" class="filter-button">Grills</a></li> 
+                <li class="{{ request('category') === 'Package' ? 'active' : '' }}"><a href="{{ route('menu', ['category' => 'Package']) }}" class="filter-button">Packages</a></li> 
+                <li class="{{ request('type') === 'Wine' ? 'active' : '' }}"><a href="{{ route('menu', ['type' => 'Wine']) }}" class="filter-button">Wine</a></li> 
             </div>
         </div>
         

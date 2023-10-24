@@ -224,13 +224,14 @@
             </div>
             <div class="outro-quote">~ Marco Pierre White</div>
             <div class="outro-button-box">
-                <button class="outro-button">Menus</button>
+                <form action="menu">
+                    <button class="outro-button">Menus</button>
+                </form>
             </div>
         </div>
     </header>
 
     <footer>
-        ini percobaan footer
     </footer>
 </body>
 

@@ -43,7 +43,7 @@
                         <p>{{ $item['type'] }}</p>
                         <p>{{ $item['category'] }}</p>
                         <p>{{ $item['description'] }}</p>
-                        {{-- <img src="{{ asset('assets/Foods/' . $item['image']) }}" alt="{{ $item['name'] }}"> --}}
+                        <img class="cart-image" src="{{ asset('assets/Foods/' . $item['image']) }}" alt="{{ $item['name'] }}">
                     </div>
                 </div>
                 
@@ -53,10 +53,16 @@
             </div>        
         </div>
 
-        <form action="{{ route('cart.clear') }}" method="get" enctype="multipart/form-data">
-            @csrf
-            <button type="submit" class="add-button">I Will Have Order</button>
-        </form>        
+        <div class="cart-button-container">
+            <form action="menu" method="get" enctype="multipart/form-data">
+                @csrf
+                <button type="submit" class="cart-button">Return to Menu</button>
+            </form>        
+            <form action="{{ route('cart.clear') }}" method="get" enctype="multipart/form-data">
+                @csrf
+                <button type="submit" class="cart-button">I Will Have Order</button>
+            </form>        
+        </div>
             
     </section>   
     

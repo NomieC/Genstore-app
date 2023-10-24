@@ -125,11 +125,13 @@ class MenuController extends Controller
         $menu->delete();
 
         return redirect('/admin')->with('success', 'Menu item deleted successfully!');
-
-        
     }
 
-
+    public function productList()
+    {
+        $menus = Menu::all();
+        return view('cart', compact('menus'));
+    }
     
 }
 

@@ -145,27 +145,6 @@ header:before {
     color: white;
 }
 
-.today-date {
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-.today-date span {
-    font-size: 1.5 rem;
-}
-
-.social-media {
-    display: flex;
-    list-style: none;
-    width: 350px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.social-media li a {
-    color: #fff;
-}
-
 /*========================================================================================================*/
 /*========================================================================================================*/
 /*========================================================================================================*/

@@ -39,6 +39,7 @@
                 </div>
             </div>
             <a href="/cart">Book Now</a>
+
             <div >
                 @if (Route::has('login'))
                 <div >
