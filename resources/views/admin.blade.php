@@ -12,34 +12,77 @@
 
     {{-- script --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="{{asset('js/home.js')}}"></script>
 
 </head>
 <body>
     @include('navbar')
-    
-    <section id="table-menu">
-<!-- resources/views/menus/index.blade.php -->
-
-<div class="menu-container card-menu">
-    @foreach ($menus as $menu)
-        <div class="card">
-            <img class="card-image" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="">
-            <div class="card-body">
-                <h5 class="card-title">{{ $menu->menu_name }}</h5>
-                <p class="card-text">{{ $menu->menu_desc }}</p>
-                <p class="card-text"><strong>Type:</strong> {{ $menu->menu_type }}</p>
-                <p class="card-text"><strong>Category:</strong> {{ $menu->menu_category }}</p>
-                <p class="card-text"><strong>Price:</strong> £{{ $menu->menu_price }}</p>
-                <p class="card-text"><strong>path:</strong> {{ $menu->menu_image }}</p>
+    <section id="menu-header">
+        <div class="menu-header-container">
+            <div class="menu-slider-container">
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
+              <div class="menu-slide"></div>
             </div>
-        </div>
-    @endforeach
-    
-</div>
-
-
+          </div>
     </section>
 
+    {{-- menu list section --}}
+    <section id="table-menu">
+        <h1 class="filter-title">Menus</h1>
+        <div class="filter-container">
+            <div class="filter-list">
+                <li><a href="{{ route('admin', ['category' => '']) }}" class="filter-button">All</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Side Dish']) }}" class="filter-button">Side Dish</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Desserts']) }}" class="filter-button">Desserts</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Snacks & Side Dishes']) }}" class="filter-button">Snacks & Side Dishes</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Starters & Small Plates']) }}" class="filter-button">Starters & Small Plates</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Salads']) }}" class="filter-button">Salads</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Mains']) }}" class="filter-button">Mains</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Grills']) }}" class="filter-button">Grills</a></li> 
+                <li><a href="{{ route('admin', ['category' => 'Package']) }}" class="filter-button">Packages</a></li> 
+                <li><a href="{{ route('admin', ['type' => 'Wine']) }}" class="filter-button">Wine</a></li> 
+            </div>
+        </div>
+        
+        <div class="menu-container card-menu">
+            <div class="card-container">
+                    @foreach ($menus as $menu)
+                    <a href="#!" class="card">
+                        <img class="front" src="{{ asset('assets/Foods/' . $menu->menu_image) }}" alt="{{asset("assets/defaultwine.jpg")}}">
+                        <div class="back">
+                            <div>
+                                <p class="card-category">{{ $menu->menu_category }}</p>
+                                <h5 class="card-title">{{ $menu->menu_name }}</h5>
+                                <p class="card-desc">{{ $menu->menu_desc }}</p>
+                                <p class="card-price">£{{ $menu->menu_price }}</p>
+                                <div class="crud-button">
+                                    <form action="admin/edit/{{ $menu->id }}">
+                                        <button class="card-button">Edit</button>
+                                    </form>
+                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="card-button">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    @endforeach 
+                </div>
+        </div>
+
+        <form action="admin/add" method="POST" enctype="multipart/form-data">
+            @csrf
+            <button type="submit" class="add-button">Add</button>
+        </form>
+            
+    </section>   
+    
 </body>
 </html>

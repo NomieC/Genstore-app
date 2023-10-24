@@ -117,7 +117,7 @@
                     <p class="grid-normaltext">We uphold integrity, innovation, and customer satisfaction as our core values in every aspect of our business.</p>
                 </div>
             </div>
-            <div class="delapan"></div>
+            <div class="delapan parallax-delapan" data-parallax="scroll"></div>
             <div class="sembilan"></div>
             <div class="sepuluh">
                 <div class="grid-text-container">

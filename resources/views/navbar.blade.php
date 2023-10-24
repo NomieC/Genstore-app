@@ -41,22 +41,6 @@
         </div>
     </nav>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var navbar = document.getElementById("navbar");
-        var fixed = navbar.offsetTop;
-
-        function updateNavbar() {
-            if (window.pageYOffset >= fixed) {
-                navbar.classList.add("fixed");
-            } else {
-                navbar.classList.remove("fixed");
-            }
-        }
-
-        window.addEventListener("scroll", updateNavbar);
-    });
-
-    </script>
+    
 </body>
 </html>
