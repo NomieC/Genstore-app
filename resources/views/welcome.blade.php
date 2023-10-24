@@ -209,7 +209,7 @@
                 <div class="content">
                     <h1 class="title" data-title="Bar">Bar</h1>
                     <div class="emblem" style="background-image: url('assets/logo.jpeg');"></div>
-                    <button class="city-info"><a href="/admin">MENU</a>
+                    <button class="city-info"><a href="/menu">MENU</a>
                     </button>
                 </div>
                 <div class="btn-close"></div>
@@ -224,7 +224,9 @@
             </div>
             <div class="outro-quote">~ Marco Pierre White</div>
             <div class="outro-button-box">
-                <button class="outro-button">Menus</button>
+                <form action="/menu">
+                    <button class="outro-button">Menus</button>
+                </form>
             </div>
         </div>
     </header>
