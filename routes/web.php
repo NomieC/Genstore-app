@@ -35,13 +35,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     // Add the 'cart' route here
-    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    Route::get('/cart', [CartController::class, 'viewCart'])->name('cart');
 });
 
 
-Route::get('/admin', [AdminController::class,'index'])->name('admin');
+Route::get('/cartadd/{id}', [CartController::class, 'addItem'])->name('cart.add');
+Route::get('/cartclear', [CartController::class, 'clearCart'])->name('cart.clear');
 
-Route::get('/admin', [MenuController::class, 'index'])->name('menu');
+Route::get('/add-to-cart/{id}', 'CartController@addItem')->name('cartadd');
+
+
+
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get('/menus/create', [MenuController::class, 'create']);
 Route::post('/menus', [MenuController::class, 'store']);

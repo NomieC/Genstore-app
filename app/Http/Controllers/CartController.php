@@ -97,25 +97,6 @@ class CartController extends Controller
         return redirect()->route('menu'); 
     }
 
-    public function removeFromCart($id)
-{
-    $cartItems = session('cart', []);
-
-    foreach ($cartItems as $key => $item) {
-        if ($item['id'] == $id) {
-            unset($cartItems[$key]); // Remove the item from the cart
-            break; // Exit the loop after removing the item
-        }
-    }
-
-    // Update the session with the modified cart items
-    session(['cart' => array_values($cartItems)]);
-
-    // Redirect back with a success message
-    return redirect()->route('menu')->with('success', 'Item removed from the cart.');
-}
-
-
     
 }
 
