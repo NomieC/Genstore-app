@@ -62,7 +62,7 @@
                                 <p class="card-price">£{{ $menu->menu_price }}</p>
                                 <div class="cart-button-box">
                                 
-                                    <form action="{{route('cart.add', ['id' => $menu->id]) }}" method="post">
+                                    <form action="{{route('cart.add', ['id' => $menu->id]) }}" method="get">
                                     @csrf
                                     <button class="cart-button" type="submit">Add to Cart</button>
                                     </form>
@@ -123,7 +123,7 @@
         });
     });
 
-        // Event listener for quantity buttons
+        // Event listener for quantity buttons  
         $('.quantity-btn').on('click', function() {
             var quantitySpan = $(this).siblings('.quantity');
             var currentQuantity = parseInt(quantitySpan.text());
