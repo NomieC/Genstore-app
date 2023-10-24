@@ -25,6 +25,26 @@ Route::get('hnl', function () {
     return view('hnl');
 })->name('hnl');
 
+Route::get('bar', function () {
+    return view('bar');
+})->name('bar');
+
+Route::get('dining', function () {
+    return view('dining');
+})->name('dining');
+
+Route::get('tea', function () {
+    return view('tea');
+})->name('tea');
+
+Route::get('grill', function () {
+    return view('grill');
+})->name('grill');
+
+Route::get('events', function () {
+    return view('events');
+})->name('events');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');//->middleware(['auth', 'verified']);

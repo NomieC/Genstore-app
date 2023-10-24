@@ -89,15 +89,13 @@
                     <button class="dropbtn">Menus</button>
                 </form>
                 <div class="dropdown-content">
-                    <a href="">Dining</a>
-                    <a href="">Grill</a>
-                    <a href="">Afternoon Tea</a>
-                    <a href="">Bar</a>
+                    <a href="/dining">Dining</a>
+                    <a href="/grill">Grill</a>
+                    <a href="/tea">Afternoon Tea</a>
+                    <a href="/bar">Bar</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">Events</button>
-            </div>
+            <a href="/events">Events</a>
         </div>
 
         
@@ -172,11 +170,3 @@
     </script>
 </body>
 </html>
-
-
-
-<!-- <div class="dropdown-content">
-                    <a href="">Christmas</a>
-                    <a href="">Valentine</a>
-                    <a href="">Sunday Lunch</a>
-                </div> -->
