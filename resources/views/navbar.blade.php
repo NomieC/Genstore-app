@@ -83,7 +83,7 @@
         <div class="nav-links" id="navLinks">
             <a href="/">Home</a>
             <a href="/#about-us">About Maison</a>
-            <a href="hnl">Hours & Location</a>
+            <a href="/hnl">Hours & Location</a>
             <div class="dropdown">
                 <form action="admin">
                     <button class="dropbtn">Menus</button>
@@ -154,6 +154,7 @@
                 logoutButton.style.display = 'none';
             }
         }
+        
         document.addEventListener("DOMContentLoaded", function() {
             var navbar = document.getElementById("navbar");
             var fixed = navbar.offsetTop;

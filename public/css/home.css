@@ -51,8 +51,8 @@ header:before {
 
 #navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     padding: 1rem 2rem;
     z-index: 1000;
     transition: top 0.3s; 

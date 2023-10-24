@@ -45,10 +45,6 @@
                 margin: 20px 90px 0;
             }
 
-            /* .hnlCard p {
-                margin: 0 0 3px;
-            } */
-
             img {
                 max-width: 970px;
                 min-height:650px;
@@ -74,6 +70,7 @@
                 .text {
                     margin: 20px;
                 }
+                
 
             }
             
@@ -83,7 +80,7 @@
     <body class="antialiased">
     <div>
             <div class="title">
-                <div>Logo</div>
+                <!-- <div>Logo</div> -->
                 <h1>Hours & Location</h1>
                 <p>Nestled in the heart of Quebec, Maison exudes an inviting charm on a picturesque block, located at 570 Hudson Street (corner of West 11th). 
                     <br>Whether seeking a cozy café, lively wine bar, or a relaxing evening retreat, Maison offers a versatile ambiance for all guests. With a 
