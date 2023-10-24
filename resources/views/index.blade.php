@@ -175,8 +175,8 @@
                 A chef's palate is born out of his childhood, and one thing all chefs have in common is a mother who can cook.
             </div>
             <div class="outro-quote">~ Marco Pierre White</div>
-            <div class="outro-button-box">
-                <button class="outro-button">Menus</button>
+            <div class="outro-button-box text-center">
+                @include('buttonkeren')
             </div>
         </div>
     </header>
