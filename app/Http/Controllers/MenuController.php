@@ -26,8 +26,7 @@ class MenuController extends Controller
         if (Auth::check() && Auth::user()->role === 'admin') {
             return view('admin/menu', compact('menus'));
         } else {
-            
-            return redirect()->route('home');
+            return view('dashboard', compact('menus')); 
         }
         
     }

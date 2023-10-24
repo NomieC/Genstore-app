@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/admin', [MenuController::class, 'index'])->name('menu');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get('/menus/create', [MenuController::class, 'create']);

@@ -9,23 +9,6 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
 
-    public function usersort(Request $request)
-    {
-        $category = $request->input('category'); 
-        $type = $request->input('type');
-        if ($category) {
-                
-            $menus = Menu::where('menu_category', $category)->get();
-        } else if ($type){
-            $menus = Menu::where('menu_type', $type)->get();
-        } else {
-            
-            $menus = Menu::all();
-        }
-        return view('dashboard', compact('menus')); 
-        
-    }
-
     public function addItem($id)
     {
         $menu = Menu::findOrFail($id);
