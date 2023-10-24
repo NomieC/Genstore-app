@@ -55,11 +55,4 @@ Route::post('/cart/add/{id}', [CartController::class, 'addItem'])->name('cart.ad
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
 
-
-// Route::post('/cart/add/{id}', 'CartController@addToCart')->name('cart.add');
-Route::post('/cart/clear', 'CartController@clearCart')->name('cart.clear');
-Route::post('/cart/remove/{id}', 'CartController@removeFromCart')->name('cart.remove');
-
-
-
 require __DIR__.'/auth.php';
