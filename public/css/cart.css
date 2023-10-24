@@ -1,5 +1,6 @@
 #cart-table {
     padding: 20px;
+    margin-top: 150px;
 }
 
 .cart-menu-container {
@@ -22,6 +23,11 @@
 .cart-price {
     font-size: 30px; 
     font-weight: 600;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 32px;
 }
 
 /* Add this CSS for quantity controls */

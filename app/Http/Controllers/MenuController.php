@@ -115,7 +115,7 @@ class MenuController extends Controller
         }
 
         Menu::create($incomingFields);
-        return redirect('/admin')->with('success','Menu item created succesfully');
+        return redirect('/menu')->with('success','Menu item created succesfully');
     }
 
     // Delete the menu item
@@ -124,7 +124,7 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
         $menu->delete();
 
-        return redirect('/admin')->with('success', 'Menu item deleted successfully!');
+        return redirect('menu')->with('success', 'Menu item deleted successfully!');
     }
 
     public function productList()

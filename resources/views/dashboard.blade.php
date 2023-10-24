@@ -62,12 +62,12 @@
                                 <p class="card-price">£{{ $menu->menu_price }}</p>
                                 <div class="cart-button-box">
                                 
-                                    <form action="{{ route('cart.add', ['id' => $menu->id]) }}" method="POST">
-                                        @csrf
-                                        <button class="cart-button" type="submit">Add to Cart</button>
+                                    <form action="{{route('cart.add', ['id' => $menu->id]) }}" method="post">
+                                    @csrf
+                                    <button class="cart-button" type="submit">Add to Cart</button>
                                     </form>
                                 
-                                    <button class="cart-button">Remove From Cart</button>
+                                    <button class="cart-button" style="display: none">Remove From Cart</button>
                                 
                             </div>
                             </div>
@@ -76,8 +76,66 @@
                     @endforeach 
                 </div>
             </div>
+            <form action="cart" enctype="multipart/form-data">
+                @csrf
+                <button type="submit" class="add-button">Order</button>
+            </form>
         </div>
     </section>   
     
+    <script>
+        $(document).ready(function() {
+    // Event listener for adding items to cart
+    $('.add-to-cart-button').on('click', function(event) {
+        event.preventDefault();
+
+        var menuId = $(this).data('id'); // Get the menu ID from the clicked button
+        var addButton = $(this);
+        var removeButton = addButton.siblings('.cart-button');
+        var quantityControls = addButton.siblings('.quantity-controls');
+        var quantitySpan = quantityControls.find('.quantity');
+
+        // Extract menu details from the card
+        var menuName = addButton.closest('.card').find('.card-title').text();
+        var menuPrice = parseFloat(addButton.closest('.card').find('.card-price').text().replace('£', ''));
+
+        // Add item to cart
+        $.ajax({
+            url: "{{ route('cart.add', ['id' => $menu->id]) }}",
+            method: "POST",
+            data: {
+                id: menuId,
+                name: menuName,
+                price: menuPrice,
+                quantity: 1, // Initial quantity is set to 1
+                _token: "{{ csrf_token() }}"
+            },
+            success: function(response) {
+                // Update UI after adding item to cart
+                addButton.remove();
+                removeButton.show();
+                quantityControls.show();
+                quantitySpan.text('1'); // Initial quantity is set to 1
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    });
+
+        // Event listener for quantity buttons
+        $('.quantity-btn').on('click', function() {
+            var quantitySpan = $(this).siblings('.quantity');
+            var currentQuantity = parseInt(quantitySpan.text());
+            if ($(this).hasClass('minus')) {
+                currentQuantity = Math.max(currentQuantity - 1, 1);
+            } else {
+                currentQuantity += 1;
+            }
+            quantitySpan.text(currentQuantity);
+        });
+    });
+
+    </script>
 </body>
 </html>
