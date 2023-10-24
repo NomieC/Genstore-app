@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/admin', [MenuController::class, 'index'])->name('menu');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get('/menus/create', [MenuController::class, 'create']);
@@ -52,7 +52,5 @@ Route::delete('/admin/delete/{id}', [MenuController::class, 'destroy'])->name('m
 
 Route::post('/cart/add/{id}', [CartController::class, 'addItem'])->name('cart.add');
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
-
-Route::get('/dashboard', [CartController::class, 'usersort'])->name('user.sort');
 
 require __DIR__.'/auth.php';

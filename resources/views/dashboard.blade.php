@@ -22,16 +22,16 @@
     <section id="table-menu">
         <div class="filter-container">
             <div class="filter-list">
-                <li><a href="{{ route('user.sort', ['category' => '']) }}" class="filter-button">All</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Side Dish']) }}" class="filter-button">Side Dish</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Desserts']) }}" class="filter-button">Desserts</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Snacks & Side Dishes']) }}" class="filter-button">Snacks & Side Dishes</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Starters & Small Plates']) }}" class="filter-button">Starters & Small Plates</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Salads']) }}" class="filter-button">Salads</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Mains']) }}" class="filter-button">Mains</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Grills']) }}" class="filter-button">Grills</a></li> 
-                <li><a href="{{ route('user.sort', ['category' => 'Package']) }}" class="filter-button">Packages</a></li> 
-                <li><a href="{{ route('user.sort', ['type' => 'Wine']) }}" class="filter-button">Wine</a></li> 
+                <li><a href="{{ route('menu', ['category' => '']) }}" class="filter-button">All</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Side Dish']) }}" class="filter-button">Side Dish</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Desserts']) }}" class="filter-button">Desserts</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Snacks & Side Dishes']) }}" class="filter-button">Snacks & Side Dishes</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Starters & Small Plates']) }}" class="filter-button">Starters & Small Plates</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Salads']) }}" class="filter-button">Salads</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Mains']) }}" class="filter-button">Mains</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Grills']) }}" class="filter-button">Grills</a></li> 
+                <li><a href="{{ route('menu', ['category' => 'Package']) }}" class="filter-button">Packages</a></li> 
+                <li><a href="{{ route('menu', ['type' => 'Wine']) }}" class="filter-button">Wine</a></li> 
             </div>
         </div>
         
